@@ -13,7 +13,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-7 col-md-6">
-                    <p><em>Urgent : Awesome Template for Charity & Non-profit Site</em></p>
+                    <p><em>CAVWOC: Centre for Alternatives for Victimized Women and Children
+                        </em></p>
                 </div>
                 <div class="col-sm-5 col-md-6">
                     <div class="sosmed-icon pull-right">
@@ -39,7 +40,7 @@
                         <div class="fa fa-envelope-o"></div>
                     </div>
                     <div class="body-content">
-                        <div class="heading">Mail :</div>
+                        <div class="heading"><br/></div>
                         info@ngoocharity.com
                     </div>
                 </div>
@@ -49,7 +50,7 @@
                         <div class="fa fa-phone"></div>
                     </div>
                     <div class="body-content">
-                        <div class="heading">Call Us :</div>
+                        <div class="heading"><br/></div>
                         +62 7100 1234
                     </div>
                 </div>
@@ -67,26 +68,20 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg">
                 <a class="navbar-brand" href="index.html">
-                    <img src="images/logo.png" alt="" />
+                    <img src="images/logo.png" alt=""/>
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                HOME
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="index.html">Home 1</a>
-                                <a class="dropdown-item" href="index-2.html">Home 2</a>
-                                <a class="dropdown-item" href="index-3.html">Home 3</a>
-                                <a class="dropdown-item" href="index-4.html">Home 4 - Onepage</a>
-                            </div>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">HOME</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 ABOUT
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -95,8 +90,28 @@
                                 <a class="dropdown-item" href="#our-team">Our Team</a>
                             </div>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/projects">PROJECTS</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/news">NEWS</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/events">GALLERY</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/events">VACANCIES</a>
+                        </li>
+
+
+                        <!--
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 CAUSES
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -105,7 +120,8 @@
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 PAGES
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -118,7 +134,8 @@
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 EVENTS
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -126,6 +143,7 @@
                                 <a class="dropdown-item" href="events-single.html">Events Detail</a>
                             </div>
                         </li>
+                        -->
                         <li class="nav-item">
                             <a class="nav-link" href="#contact">CONTACT US</a>
                         </li>

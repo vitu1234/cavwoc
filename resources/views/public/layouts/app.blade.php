@@ -15,12 +15,10 @@
 
     <!-- Styles -->
 
-    <link rel="icon" href="{{ asset('assets/img/brand/favicon.png') }}" type="image/png">
-
     <!-- ==============================================
 	Favicons
 	=============================================== -->
-    <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}">
+    <link rel="shortcut icon" href="{{asset('images/favicon.png')}}">
     <link rel="apple-touch-icon" href="{{asset('images/apple-touch-icon.png')}}">
     <link rel="apple-touch-icon" sizes="72x72" href="{{asset('images/apple-touch-icon-72x72.png')}}">
     <link rel="apple-touch-icon" sizes="114x114" href="{{asset('images/apple-touch-icon-114x114.png')}}">
