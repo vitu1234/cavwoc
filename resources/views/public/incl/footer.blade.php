@@ -4,43 +4,17 @@
         <div class="container">
 
             <div class="row">
-                <div class="col-sm-3 col-md-3">
+                <div class="col-sm-4 col-md-4">
                     <div class="footer-item">
                         <img src="{{asset('images/logo_w.png')}}" alt="logo bottom" class="logo-bottom">
                         <div class="spacer-30"></div>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
+                        <p>We are a social service organization formed in 1997 and registered under the Trustees
+                            Incorporation Act of Malawi in 1998. We are affiliated to ... </p>
                         <a href="#"><i class="fa fa-angle-right"></i> Read More</a>
                     </div>
                 </div>
 
-                <div class="col-sm-3 col-md-3">
-                    <div class="footer-item">
-                        <div class="footer-title">
-                            WHO WE ARE
-                        </div>
-
-                        <div class="row">
-                            <div class="col-sm-6 col-md-6">
-                                <ul class="list">
-                                    <li><a href="about.html" title="About us">About us</a></li>
-                                    <li><a href="couses.html" title="Couses">Couses</a></li>
-                                    <li><a href="testimonials.html" title="Testimonials">Testimonials</a></li>
-                                    <li><a href="gallery.html" title="Gallery">Gallery</a></li>
-                                    <li><a href="faq.html" title="Faq">Faq</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-sm-6 col-md-6">
-                                <ul class="list">
-                                    <li><a href="our-team.html" title="Our Team">Our Team</a></li>
-                                    <li><a href="events.html" title="Events">Events</a></li>
-                                    <li><a href="contact.html" title="Contact Us">Contact Us</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-3 col-md-3">
+                <div class="col-sm-4 col-md-4">
                     <div class="footer-item">
                         <div class="footer-title">
                             WHERE WE WORK
@@ -50,7 +24,8 @@
                                 <div class="info-icon">
                                     <span class="fa fa-map-marker"></span>
                                 </div>
-                                <div class="info-text">99 S.t Jomblo Park Pekanbaru 28292. Indonesia</div> </li>
+                                <div class="info-text">99 S.t Jomblo Park Pekanbaru 28292. Indonesia</div>
+                            </li>
                             <li>
                                 <div class="info-icon">
                                     <span class="fa fa-phone"></span>
@@ -74,12 +49,13 @@
                     </div>
                 </div>
 
-                <div class="col-sm-3 col-md-3">
+                <div class="col-sm-4 col-md-4">
                     <div class="footer-item">
                         <div class="footer-title">
                             FOLLOW US
                         </div>
-                        <p>Lit sed The Best in dolor sit amet consectetur adipisicing elit sedconsectetur adipisicing</p>
+{{--                        <p>Lit sed The Best in dolor sit amet consectetur adipisicing elit sedconsectetur--}}
+{{--                            adipisicing</p>--}}
                         <div class="sosmed-icon primary">
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>
@@ -96,7 +72,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-12">
-                    <p class="ftex">Copyright 2019 &copy; <span class="color-primary">NGOO HTML Template</span>. Designed by <span class="color-primary">Rometheme.</span></p>
+                    <p class="ftex">Copyright <script>document.write(new Date().getFullYear());</script> &copy; <span class="color-primary">CAVWOC</span>.
+                        Designed by <a href="https://www.netsoftmw.com/" target="_blank" ><span class="color-primary">NetSoft Malawi</span></a></p>
                 </div>
             </div>
         </div>

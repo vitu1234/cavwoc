@@ -41,7 +41,7 @@
                     </div>
                     <div class="body-content">
                         <div class="heading"><br/></div>
-                        info@ngoocharity.com
+                        cavwoc@gmail.com
                     </div>
                 </div>
                 <!-- INFO 2 -->
@@ -51,7 +51,7 @@
                     </div>
                     <div class="body-content">
                         <div class="heading"><br/></div>
-                        +62 7100 1234
+                        +(265) 052 39876
                     </div>
                 </div>
                 <!-- INFO 3 -->

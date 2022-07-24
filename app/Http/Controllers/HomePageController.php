@@ -6,10 +6,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 
-class NewsController extends Controller
+class HomePageController extends Controller
 {
-    public function getAllNews(){
-        $news = DB::connection('mysql')->select('SELECT *FROM news ORDER BY id DESC');
+
+    public function setHomePage(){
+        $news = DB::connection('mysql')->select('SELECT *FROM news LIMIT 4 ORDER BY id DESC');
         $data = array(
             'news' => $news,
         );

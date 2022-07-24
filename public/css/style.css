@@ -1238,9 +1238,9 @@ Back To Top Section
   outline: none; }
 
 .btn, .btn-primary, .btn-secondary, .btn-light, .btn-grey, .rs-nav-tabs .nav-pills .nav-link, .rs-nav-tabs .nav-pills li a, .btn-ghost-light, .btn-ghost-dark {
-  font-size: 14px;
+  font-size: 12px;
   color: #ffffff;
-  padding: 13px 40px;
+  padding: 10px 30px;
   border: 0;
   /*@include border-radius(30px);*/ }
 
@@ -1672,9 +1672,16 @@ Back To Top Section
     position: relative; }
   .box-fundraising .title {
     font-size: 18px;
-    font-weight: 500; }
+    font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin: 0;
+      /*background: white;*/
+      resize: none;
+  }
   .box-fundraising .progress-fundraising {
-    margin-top: 20px; }
+    margin-top: 30px; }
   .box-fundraising:hover {
     -webkit-box-shadow: 4px 5px 30px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 4px 5px 30px rgba(0, 0, 0, 0.2);
