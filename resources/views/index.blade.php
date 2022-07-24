@@ -3,48 +3,41 @@
 @section('content')
     <!-- BANNER -->
     <div id="oc-fullslider" class="banner owl-carousel">
-        <div class="owl-slide">
-            <div class="item">
-                <img src="images/dummy-img-1920x900.jpg" alt="Slider">
-                <div class="slider-pos">
-                    <div class="container">
-                        <div class="wrap-caption">
-                            <h1 class="caption-heading bg"><span>#EndViolence</span> For Every Woman</h1>
-                            <p class="bg">Remipsum dolor sit amet consectetur adipisicing</p>
-                            <a href="#" class="btn btn-primary">DONATE NOW</a>
+
+        @if(count($carousels) > 0)
+            @foreach($carousels as $carousel )
+                <div class="owl-slide">
+                    <div class="item">
+                        <img src="/storage/carousel/{{$carousel->img_url}}" alt="Slider">
+                        <div class="slider-pos">
+                            <div class="container">
+                                <div class="">
+                                    <h1 class="caption-heading bg"><span>{{$carousel->title}}</span></h1>
+                                    <p class="bg">{{$carousel->subtitle}}</p>
+                                    {{--                                    <a href="#" class="btn btn-primary">DONATE NOW</a>--}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        @else
+
+            <div class="owl-slide">
+                <div class="item">
+                    <img src="images/dummy-img-1920x900.jpg" alt="Slider">
+                    <div class="slider-pos">
+                        <div class="container">
+                            <div class="wrap-caption right">
+                                <h1 class="caption-heading bg"><span>#EndViolence</span> For Every Woman</h1>
+                                <p class="bg">remipsum dolor sit amet consectetur adipisicing</p>
+                                <a href="#" class="btn btn-primary">DONATE NOW</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="owl-slide">
-            <div class="item">
-                <img src="images/dummy-img-1920x900.jpg" alt="Slider">
-                <div class="slider-pos">
-                    <div class="container">
-                        <div class="wrap-caption center">
-                            <h1 class="caption-heading bg"><span>#EndViolence</span> For Every Woman</h1>
-                            <p class="bg">remipsum dolor sit amet consectetur adipisicing</p>
-                            <a href="#" class="btn btn-primary">DONATE NOW</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="owl-slide">
-            <div class="item">
-                <img src="images/dummy-img-1920x900.jpg" alt="Slider">
-                <div class="slider-pos">
-                    <div class="container">
-                        <div class="wrap-caption right">
-                            <h1 class="caption-heading bg"><span>#EndViolence</span> For Every Woman</h1>
-                            <p class="bg">remipsum dolor sit amet consectetur adipisicing</p>
-                            <a href="#" class="btn btn-primary">DONATE NOW</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @endif
     </div>
 
     <div class="clearfix"></div>
@@ -101,7 +94,7 @@
         </div>
     </div>
 
-    <!-- WE NEED YOUR HELP -->
+    <!-- PROJECTS -->
     <div id="" class="section">
         <div class="">
             <div class="container">
@@ -114,89 +107,55 @@
                         {{--                            nulla. Sed at ullamcorper risus.</p>--}}
                     </div>
                     <div class="clearfix"></div>
-                    <!-- Item 1 -->
-                    <div class="col-sm-4 col-md-4">
-                        <div class="box-fundraising" style="height: 450px !important; overflow: hidden;">
-                            <a href="#">
-                                <div class="media">
-                                    <img src="images/dummy-img-600x400.jpg" alt="">
-                                </div>
-                                <div class="body-content">
-                                    <p class="title"><a href="cause-single.html">Improving Secondary Education in Malawi
-                                            (ISEM)</a></p>
-                                    <div class="text">
-                                        Two learners hold up the happiness and sadness boxes used to report abuse at
-                                        Chisugulu secondary school in Phalombe...
-                                    </div>
-                                    <div class="progress-fundraising">
-                                        <div class="total"><small>$2,580/$3,000</small></div>
-                                        <a class="btn btn-sm btn-primary text-light" style="float: right;">Donate</a>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Item 2 -->
-                    <div class="col-sm-4 col-md-4">
-                        <div class="box-fundraising" style="height: 450px !important; overflow: hidden;">
-                            <a href="#">
-                                <div class="media">
-                                    <img src="images/dummy-img-600x400.jpg" alt="">
-                                </div>
-                                <div class="body-content">
-                                    <p class="title"><a href="cause-single.html">Local Rights Programme</a></p>
-                                    <div class="text">
-                                        Girl poses as a national treasure, entitled to rights as a Malawian Citizen, a
-                                        National Champion to be....
-                                    </div>
-                                    <div class="progress-fundraising">
-                                        <div class="total"><small>$1,580/$2,000</small></div>
-                                        <a class="btn btn-sm btn-primary text-light" style="float: right;">Donate</a>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
 
-                    <!-- Item 3 -->
-                    <div class="col-sm-4 col-md-4">
-                        <div class="box-fundraising" style="height: 450px !important; overflow: hidden;">
-                            <a href="#">
-                                <div class="media">
-                                    <img src="images/dummy-img-600x400.jpg" alt="">
+                    @if(count($projects) > 0)
+                        @foreach($projects as $project)
+                            <div class="col-sm-4 col-md-4">
+                                <div class="box-fundraising" style="height: 450px !important; overflow: hidden;">
+                                    <a href="#">
+                                        <div class="media">
+                                            <img src="/storage/projects/{{$project->img_url}}" alt="">
+                                        </div>
+                                        <div class="body-content">
+                                            <p class="title"><a
+                                                    href="cause-single.html">{{ \Illuminate\Support\Str::of($project->project_name)->words(20,'...')}}</a>
+                                            </p>
+                                            <span class="text-warning mt-3 mb-3 "><span class="fa fa-clock-o"></span> {{$project->project_type}}</span>
+                                            <div class="text text-dark text-justify">
+                                                {{ \Illuminate\Support\Str::of($project->project_summary)->words(40,'...')}}
+                                            </div>
+                                            <div class="progress-fundraising">
+                                                <div class="total"><small>${{number_format($project->amount_raised,2)}}
+                                                        /${{number_format($project->budgeted_amount,2)}}</small></div>
+                                                <a class="btn btn-sm btn-primary text-light"
+                                                   style="float: right;">Donate</a>
+                                            </div>
+                                        </div>
+                                    </a>
                                 </div>
-                                <div class="body-content">
-                                    <p class="title"><a href="cause-single.html">Combating Sexual/School Gender Based
-                                            Violence Among Boys And Girls In Primary School For Increased Retention</a>
-                                    </p>
-                                    <div class="text">
-                                        Standard 6& 7 girls and their teacher Mrs Nyorongo Ulongwe 2 primary school,
-                                        Balaka....
-                                    </div>
-                                    <div class="progress-fundraising">
-                                        <div class="total"><small>$2,580/$3,000</small></div>
-                                        <a class="btn btn-sm btn-primary text-light" style="float: right;">Donate</a>
-                                    </div>
-                                </div>
-                            </a>
+                            </div>
+                        @endforeach
+                        <div class="col-sm-12 col-md-12">
+                            <div class="spacer-40"></div>
+                            <div class="text-center">
+                                <a href="cause.html" class="btn btn-primary">SEE ALL PROJECTS</a>
+                            </div>
+                            <br/>
+                            <br/>
                         </div>
-                    </div>
+                    @else
+                        <p style="width: 100%" class="mb-5 text-justify text-center text-danger alert alert-danger">No
+                            Projects found, please
+                            check again later!</p>
+                    @endif
 
-                    <div class="col-sm-12 col-md-12">
-                        <div class="spacer-40"></div>
-                        <div class="text-center">
-                            <a href="cause.html" class="btn btn-primary">SEE ALL PROJECTS</a>
-                        </div>
-                        <br/>
-                        <br/>
-                    </div>
 
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- URGENT CAUSE -->
+    <!-- NEWS -->
     <div class="section" style="background-color: #cccccc">
         <div class="">
             <div class="container">
@@ -205,85 +164,42 @@
                         <h2 class="section-heading center">
                             Recent <span>News </span>
                         </h2>
-                        {{--                        <p class="subheading text-center">Lorem ipsum dolor sit amet, onsectetur adipiscing cons ectetur--}}
-                        {{--                            nulla. Sed at ullamcorper risus.</p>--}}
-                    </div>
-                    <!-- Item 1 -->
-                    <div class="col-sm-4 col-md-4">
-                        <div class="box-fundraising">
-                            <div class="media">
-                                <div class="meta-date">
-                                    <div class="date">02</div>
-                                    <div class="month">AUG</div>
-                                </div>
-                                <img src="images/dummy-img-600x400.jpg" alt="">
-                            </div>
-                            <div class="body-content">
-                                <p class="title"><a href="events-single.html">EDUCATION FOR SYRIAN CHILD</a></p>
-                                <div class="meta">
-                                    <span class="date"><i class="fa fa-clock-o"></i>  12:00 am - 5:00 pm</span>
-                                    <span class="location"><i class="fa fa-map-marker"></i> Montreal, Canada</span>
-                                </div>
-                                <div class="text">Teritatis et quasi architecto. Sed ut perspiciatis unde omnis iste
-                                    natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam,
-                                    eaque ipsa quae ab illo invent.
-                                </div>
-                                <div class="spacer-30"></div>
-                                <a href="events-single.html" class="btn btn-primary">READ MORE</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Item 2 -->
-                    <div class="col-sm-4 col-md-4">
-                        <div class="box-fundraising">
-                            <div class="media">
-                                <div class="meta-date">
-                                    <div class="date">10</div>
-                                    <div class="month">AUG</div>
-                                </div>
-                                <img src="images/dummy-img-600x400.jpg" alt="">
-                            </div>
-                            <div class="body-content">
-                                <p class="title"><a href="events-single.html">HOME FOR KAMPAR'S CHILD</a></p>
-                                <div class="meta">
-                                    <span class="date"><i class="fa fa-clock-o"></i>  12:00 am - 5:00 pm</span>
-                                    <span class="location"><i class="fa fa-map-marker"></i> Montreal, Canada</span>
-                                </div>
-                                <div class="text">Teritatis et quasi architecto. Sed ut perspiciatis unde omnis iste
-                                    natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam,
-                                    eaque ipsa quae ab illo invent.
-                                </div>
-                                <div class="spacer-30"></div>
-                                <a href="events-single.html" class="btn btn-primary">READ MORE</a>
 
-                            </div>
-                        </div>
                     </div>
-                    <!-- Item 3 -->
-                    <div class="col-sm-4 col-md-4">
-                        <div class="box-fundraising">
-                            <div class="media">
-                                <div class="meta-date">
-                                    <div class="date">21</div>
-                                    <div class="month">AUG</div>
+
+                @if(count($news) > 0)
+                    @foreach($news as $article)
+                        <!-- Item 1 -->
+                            <div class="col-sm-4 col-md-4">
+                                <div class="box-fundraising">
+                                    <div class="media">
+                                        <div class="meta-date">
+                                            <div
+                                                class="date">{{ Carbon\Carbon::parse($article->created_at)->format('d')}}</div>
+                                            <div
+                                                class="month">{{ Carbon\Carbon::parse($article->created_at)->format('M')}}</div>
+                                        </div>
+                                        <img src="/storage/news/{{$article->img_url}}" alt="">
+                                    </div>
+                                    <div class="body-content">
+                                        <p style="max-height: 50px" class="title"><a
+                                                href="events-single.html">{{ \Illuminate\Support\Str::of($article->title)->words(20,'...')}}</a>
+                                        </p>
+                                        <div
+                                            class="text text-justify text-dark">{{ \Illuminate\Support\Str::of( $article->content)->words(30,'...')}}
+                                        </div>
+                                        <div class="spacer-30"></div>
+                                        <a href="events-single.html" class="btn btn-primary">READ MORE</a>
+                                    </div>
                                 </div>
-                                <img src="images/dummy-img-600x400.jpg" alt="">
                             </div>
-                            <div class="body-content">
-                                <p class="title"><a href="events-single.html">CLEAN WATER FOR SOUTH SUDAN'S</a></p>
-                                <div class="meta">
-                                    <span class="date"><i class="fa fa-clock-o"></i>  12:00 am - 5:00 pm</span>
-                                    <span class="location"><i class="fa fa-map-marker"></i> Montreal, Canada</span>
-                                </div>
-                                <div class="text">Teritatis et quasi architecto. Sed ut perspiciatis unde omnis iste
-                                    natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam,
-                                    eaque ipsa quae ab illo invent.
-                                </div>
-                                <div class="spacer-30"></div>
-                                <a href="events-single.html" class="btn btn-primary">READ MORE</a>
-                            </div>
-                        </div>
-                    </div>
+                        @endforeach
+                    @else
+                        <p style="width: 100%" class="mb-5 text-justify text-center text-danger alert alert-danger">No
+                            News articles found, please
+                            check again later!</p>
+                    @endif
+
 
                 </div>
 
