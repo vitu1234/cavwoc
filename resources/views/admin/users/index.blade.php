@@ -50,14 +50,19 @@
                                         <td>{{$user->email}}</td>
                                         <td>{!!  $user->account_status == 1? '<span class="text-success">Active</span>' : '<span class="text-danger">Inactive</span>' !!}</td>
                                         <td>
-                                            <a href="/admin/user/view/{{$user->id}}"
-                                               class="btn btn-sm btn-primary mx-2">
-                                                <span class="fa fa-edit"></span>
-                                            </a>
-                                            <a href="/admin/user/delete/{{$user->id}}"
-                                               class="btn btn-sm btn-primary mx-2">
-                                                <span class="fa fa-trash"></span>
-                                            </a>
+
+                                            <form action="/admin/users/delete/{{$user->id}}" method="POST">
+                                                @csrf
+                                                @method('delete')
+
+                                                <a href="/admin/users/view/{{$user->id}}"
+                                                   class="btn btn-sm btn-primary mx-2">
+                                                    <span class="fa fa-edit"></span>
+                                                </a>
+                                                <button class="btn btn-sm btn-primary mx-2">
+                                                    <span class="fa fa-trash"></span>
+                                                </button>
+                                            </form>
                                         </td>
                                     </tr>
                                     <?php $count++?>

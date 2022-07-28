@@ -16,9 +16,12 @@ Route::prefix('admin')->group(function () {
     Route::get('/', ['App\Http\Controllers\AdminDashboardController', 'setDashboard']);
     Route::prefix('users')->group(function () {
 
-        Route::get('/', ['App\Http\Controllers\UsersController', 'getUsers']);
+        Route::get('/', ['App\Http\Controllers\UsersController', 'getUsers'])->name('all_users');
         Route::get('/showaddform', ['App\Http\Controllers\UsersController', 'showAddUsersForm']);
         Route::post('/store', ['App\Http\Controllers\UsersController', 'store_user']);
+        Route::get('/view/{id}', ['App\Http\Controllers\UsersController', 'view_user']);
+        Route::put('/update/{id}', ['App\Http\Controllers\UsersController', 'update']);
+        Route::delete('/delete/{id}', ['App\Http\Controllers\UsersController', 'delete_user']);
 
     });
 
