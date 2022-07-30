@@ -59,6 +59,17 @@ Route::prefix('admin')->group(function () {
 
     });
 
+    Route::prefix('others_say')->group(function () {
+
+        Route::get('/', ['App\Http\Controllers\OthersSayController', 'index'])->name('all_others_say');
+        Route::get('/create', ['App\Http\Controllers\OthersSayController', 'create']);
+        Route::post('/store', ['App\Http\Controllers\OthersSayController', 'store']);
+        Route::get('/edit/{id}', ['App\Http\Controllers\OthersSayController', 'edit']);
+        Route::put('/update/{id}', ['App\Http\Controllers\OthersSayController', 'update']);
+        Route::delete('/delete/{id}', ['App\Http\Controllers\OthersSayController', 'destroy']);
+
+    });
+
 
 });
 
