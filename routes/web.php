@@ -70,6 +70,17 @@ Route::prefix('admin')->group(function () {
 
     });
 
+    Route::prefix('gallery')->group(function () {
+
+        Route::get('/', ['App\Http\Controllers\GalleryController', 'index'])->name('all_gallery');
+        Route::get('/create', ['App\Http\Controllers\GalleryController', 'create']);
+        Route::post('/store', ['App\Http\Controllers\GalleryController', 'store']);
+        Route::get('/edit/{id}', ['App\Http\Controllers\GalleryController', 'edit']);
+        Route::put('/update/{id}', ['App\Http\Controllers\GalleryController', 'update']);
+        Route::delete('/delete/{id}', ['App\Http\Controllers\GalleryController', 'destroy']);
+
+    });
+
 
 });
 

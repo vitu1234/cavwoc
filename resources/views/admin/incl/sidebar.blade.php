@@ -56,6 +56,14 @@
                 </li>
 
                 <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/gallery"
+                       aria-expanded="false">
+                        <i class="fa fa-table" aria-hidden="true"></i>
+                        <span class="hide-menu">Gallery</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
                        aria-expanded="false">
                         <i class="fa fa-table" aria-hidden="true"></i>
