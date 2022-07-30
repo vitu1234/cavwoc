@@ -40,6 +40,22 @@
                 </li>
 
                 <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/partners"
+                       aria-expanded="false">
+                        <i class="fa fa-object-group" aria-hidden="true"></i>
+                        <span class="hide-menu">Partners</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/others_say"
+                       aria-expanded="false">
+                        <i class="fa fa-microphone" aria-hidden="true"></i>
+                        <span class="hide-menu">Others Say</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
                        aria-expanded="false">
                         <i class="fa fa-table" aria-hidden="true"></i>

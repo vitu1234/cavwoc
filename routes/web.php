@@ -48,6 +48,17 @@ Route::prefix('admin')->group(function () {
 
     });
 
+    Route::prefix('partners')->group(function () {
+
+        Route::get('/', ['App\Http\Controllers\PartnersController', 'index'])->name('all_partners');
+        Route::get('/create', ['App\Http\Controllers\PartnersController', 'create']);
+        Route::post('/store', ['App\Http\Controllers\PartnersController', 'store']);
+        Route::get('/edit/{id}', ['App\Http\Controllers\PartnersController', 'edit']);
+        Route::put('/update/{id}', ['App\Http\Controllers\PartnersController', 'update']);
+        Route::delete('/delete/{id}', ['App\Http\Controllers\PartnersController', 'destroy']);
+
+    });
+
 
 });
 
