@@ -37,6 +37,17 @@ Route::prefix('admin')->group(function () {
 
     });
 
+    Route::prefix('news')->group(function () {
+
+        Route::get('/', ['App\Http\Controllers\NewsController', 'index'])->name('all_news');
+        Route::get('/create', ['App\Http\Controllers\NewsController', 'create']);
+        Route::post('/store', ['App\Http\Controllers\NewsController', 'store']);
+        Route::get('/edit/{id}', ['App\Http\Controllers\NewsController', 'edit']);
+        Route::put('/update/{id}', ['App\Http\Controllers\NewsController', 'update']);
+        Route::delete('/delete/{id}', ['App\Http\Controllers\NewsController', 'destroy']);
+
+    });
+
 
 });
 
