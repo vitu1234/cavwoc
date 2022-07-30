@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::prefix('admin')->group(function () {
     Route::get('/', ['App\Http\Controllers\AdminDashboardController', 'setDashboard']);
+
     Route::prefix('users')->group(function () {
 
         Route::get('/', ['App\Http\Controllers\UsersController', 'getUsers'])->name('all_users');
@@ -22,6 +23,17 @@ Route::prefix('admin')->group(function () {
         Route::get('/view/{id}', ['App\Http\Controllers\UsersController', 'view_user']);
         Route::put('/update/{id}', ['App\Http\Controllers\UsersController', 'update']);
         Route::delete('/delete/{id}', ['App\Http\Controllers\UsersController', 'delete_user']);
+
+    });
+
+    Route::prefix('projects')->group(function () {
+
+        Route::get('/', ['App\Http\Controllers\ProjectsController', 'index'])->name('all_projects');
+        Route::get('/create', ['App\Http\Controllers\ProjectsController', 'create']);
+        Route::post('/store', ['App\Http\Controllers\ProjectsController', 'store']);
+        Route::get('/edit/{id}', ['App\Http\Controllers\ProjectsController', 'edit']);
+        Route::put('/update/{id}', ['App\Http\Controllers\ProjectsController', 'update']);
+        Route::delete('/delete/{id}', ['App\Http\Controllers\ProjectsController', 'destroy']);
 
     });
 

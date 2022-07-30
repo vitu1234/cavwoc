@@ -22,6 +22,23 @@
                         <span class="hide-menu">Users</span>
                     </a>
                 </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/projects"
+                       aria-expanded="false">
+                        <i class="fa fa-briefcase" aria-hidden="true"></i>
+                        <span class="hide-menu">Projects</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/news"
+                       aria-expanded="false">
+                        <i class="fa fa-newspaper" aria-hidden="true"></i>
+                        <span class="hide-menu">News</span>
+                    </a>
+                </li>
+
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
                        aria-expanded="false">

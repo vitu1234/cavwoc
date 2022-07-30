@@ -135,7 +135,7 @@ class UsersController extends Controller
                     'phone' => $request->phone,
                     'id' => $id
                 ]
-            );;
+            );
 
             if ($saveUser) {
                 return redirect()->back()->with('success', 'User updated successfully.');
