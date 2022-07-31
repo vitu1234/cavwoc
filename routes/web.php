@@ -85,14 +85,9 @@ Route::prefix('admin')->group(function () {
 });
 
 
-//Route::prefix('admin')->group(function () {
-//Route::get('/users', ['App\Http\Controllers\AdminDashboardController', 'setDashboard']);
-//Route::get('/admin2', ['App\Http\Controllers\AdminDashboardController', 'setDashboard']);
-//    Route::get('/', ['App\Http\Controllers\AdminDashboardController', 'setDashboard']);
-
-//});
 
 //Route::get('admin', ['App\Http\Controllers\AdminDashboardController', 'setDashboard']);
 Route::get('/', ['App\Http\Controllers\HomePageController', 'setHomePage']);
-//Route::get('/admin', ['App\Http\Controllers\AdminDashboardController', 'setDashboard'])->name('admin');
+Route::get('/news', ['App\Http\Controllers\NewsController', 'get_public_news']);
+Route::get('/news/{id}', ['App\Http\Controllers\NewsController', 'get_single_public_news']);
 

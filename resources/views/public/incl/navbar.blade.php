@@ -68,7 +68,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg">
                 <a class="navbar-brand" href="index.html">
-                    <img style="height: 50px !important;" src="images/logo.png" alt=""/>
+                    <img style="height: 50px !important;" src="{{asset('images/logo.png')}}" alt=""/>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
