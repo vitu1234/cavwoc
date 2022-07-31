@@ -13,8 +13,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-7 col-md-6">
-                    <p><em>CAVWOC: Centre for Alternatives for Victimized Women and Children
-                        </em></p>
+                    <p><small>CAVWOC: Centre for Alternatives for Victimized Women and Children
+                        </small></p>
                 </div>
                 <div class="col-sm-5 col-md-6">
                     <div class="sosmed-icon pull-right">
@@ -68,7 +68,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg">
                 <a class="navbar-brand" href="index.html">
-                    <img src="images/logo.png" alt=""/>
+                    <img style="height: 50px !important;" src="images/logo.png" alt=""/>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

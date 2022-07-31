@@ -24,6 +24,14 @@
                 </li>
 
                 <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/carousel"
+                       aria-expanded="false">
+                        <i class="fa fa-sliders-h" aria-hidden="true"></i>
+                        <span class="hide-menu">Carousel</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/projects"
                        aria-expanded="false">
                         <i class="fa fa-briefcase" aria-hidden="true"></i>

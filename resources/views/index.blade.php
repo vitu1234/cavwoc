@@ -79,7 +79,7 @@
                         </ul>
 
                         <div class=""></div>
-                        <a href="#" class="btn btn-primary">READ MORE <span class="fa fa-arrow-right"></span></a>
+                        <a href="#" class="btn btn-primary">READ MORE <span class="fa fa-chevron-right"></span></a>
                         <div class="spacer-30"></div>
 
                     </div>
@@ -111,20 +111,24 @@
                     @if(count($projects) > 0)
                         @foreach($projects as $project)
                             <div class="col-sm-4 col-md-4">
-                                <div class="box-fundraising" style="height: 450px !important; overflow: hidden;">
+                                <div class="box-fundraising" style="height: 400px !important; overflow: hidden;">
                                     <a href="#">
                                         <div class="media">
-                                            <img src="/storage/projects/{{$project->img_url}}" alt="">
+                                            <img style="height: 200px !important; width: 100%"
+                                                 src="/storage/projects/{{$project->img_url}}" alt="">
                                         </div>
                                         <div class="body-content">
-                                            <p class="title"><a
-                                                    href="cause-single.html">{{ \Illuminate\Support\Str::of($project->project_name)->words(20,'...')}}</a>
-                                            </p>
-                                            <span class="text-warning mt-3 mb-3 "><span class="fa fa-clock-o"></span> {{$project->project_type}}</span>
-                                            <div class="text text-dark text-justify">
-                                                {{ \Illuminate\Support\Str::of($project->project_summary)->words(40,'...')}}
+                                            <div style="height: 80px !important; margin-top: 5px;">
+                                                <p class="title"><a
+                                                        href="cause-single.html">{{ \Illuminate\Support\Str::of($project->project_name)->words(20,'...')}}</a>
+                                                </p>
+                                                <span class="text-warning mt-3 mb-3 "><span
+                                                        class="fa fa-clock-o"></span> {{$project->project_type}}</span>
+                                                <div class="text text-dark text-justify">
+                                                    {{ \Illuminate\Support\Str::of($project->project_summary)->words(20,'...')}}
+                                                </div>
                                             </div>
-                                            <div class="progress-fundraising">
+                                            <div class="progress-fundraising mt-5">
                                                 <div class="total"><small>${{number_format($project->amount_raised,2)}}
                                                         /${{number_format($project->budgeted_amount,2)}}</small></div>
                                                 <a class="btn btn-sm btn-primary text-light"
@@ -179,14 +183,16 @@
                                             <div
                                                 class="month">{{ Carbon\Carbon::parse($article->created_at)->format('M')}}</div>
                                         </div>
-                                        <img src="/storage/news/{{$article->img_url}}" alt="">
+                                        <img  style="height: 220px !important; width: 100%" src="/storage/news/{{$article->img_url}}" alt="">
                                     </div>
                                     <div class="body-content">
-                                        <p style="max-height: 50px" class="title"><a
-                                                href="events-single.html">{{ \Illuminate\Support\Str::of($article->title)->words(20,'...')}}</a>
-                                        </p>
-                                        <div
-                                            class="text text-justify text-dark">{{ \Illuminate\Support\Str::of( $article->content)->words(30,'...')}}
+                                        <div style="height: 80px !important; margin-top: 5px;">
+                                            <p style="max-height: 50px" class="title"><a
+                                                    href="events-single.html">{{ \Illuminate\Support\Str::of($article->title)->words(20,'...')}}</a>
+                                            </p>
+                                            <div
+                                                class="text text-justify text-dark">{{ \Illuminate\Support\Str::of( $article->body)->words(20,'...')}}
+                                            </div>
                                         </div>
                                         <div class="spacer-30"></div>
                                         <a href="events-single.html" class="btn btn-primary">READ MORE</a>
