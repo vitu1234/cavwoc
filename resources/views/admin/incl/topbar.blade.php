@@ -6,7 +6,7 @@
             <!-- ============================================================== -->
             <!-- Logo -->
             <!-- ============================================================== -->
-            <a class="navbar-brand" href="dashboard.html">
+            <a class="navbar-brand" href="/admin">
                 <!-- Logo icon -->
                 <b class="logo-icon">
                     <!-- Dark Logo icon -->
@@ -41,14 +41,7 @@
                 <!-- ============================================================== -->
                 <!-- Search -->
                 <!-- ============================================================== -->
-                <li class=" in">
-                    <form role="search" class="app-search d-none d-md-block me-3">
-                        <input type="text" placeholder="Search..." class="form-control mt-0">
-                        <a href="" class="active">
-                            <i class="fa fa-search"></i>
-                        </a>
-                    </form>
-                </li>
+
                 <!-- ============================================================== -->
                 <!-- User profile and search -->
                 <!-- ============================================================== -->

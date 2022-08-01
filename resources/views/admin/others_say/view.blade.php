@@ -1,0 +1,154 @@
+@extends('admin.layouts.app')
+
+@section('content')
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="white-box">
+                    <h3 class="box-title text-center">Edit What Others Say</h3>
+                    <p class="text-muted text-center">Edit - What Others Say - on form below</p>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <a style="float: left;" href="/admin/others_say"
+                               class="btn  btn-primary mx-2 mb-3">
+                                <span class="fa fa-arrow-left mx-2"></span> Back
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-  body">
+
+
+                            @if(Session::has('success'))
+                                <div class="alert alert-success text-center" style="width: 100%;">
+                                    {{ Session::get('success') }}
+                                    @php
+                                        Session::forget('success');
+                                    @endphp
+                                </div>
+                            @endif
+
+                            @if(Session::has('error'))
+                                <div class="alert alert-danger text-center" style="width: 100%;">
+                                    {{ Session::get('error') }}
+                                    @php
+                                        Session::forget('error');
+                                    @endphp
+                                </div>
+                            @endif
+
+                            @if ($errors->any())
+                                <div class="alert alert-danger text-center" style="width: 100%;">
+                                    <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+
+                            <div class="row mb-5">
+                                <div class="container-fluid">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-4">
+                                        <img class="img-rounded img-thumbnail"
+                                             src="{{url('storage/others_say/'.$others_say->profile_picture)}}"
+                                        />
+                                    </div>
+                                    <div class="col-md-4"></div>
+                                </div>
+                            </div>
+
+
+                            <form enctype="multipart/form-data" method="POST"
+                                  action="/admin/others_say/update/{{$others_say->id}}"
+                                  class="form-horizontal form-material">
+                                @csrf
+                                @method('PUT')
+
+
+                                <div class="row">
+                                    <div class="form-group col-md-12 mb-4">
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <label class="p-0">Image - Profile</label>
+                                            <input accept=".png, .jpg, .jpeg" name="profile_picture"
+                                                   type="file"
+                                                   placeholder=""
+                                                   class="form-control p-0 border-0">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-6 mb-4">
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <label class="p-0">Full name
+                                            </label>
+                                            <input value="{{$others_say->fullname}}" required name="fullname"
+                                                   type="text"
+                                                   placeholder="Ex: John Doe"
+                                                   class="form-control p-0 border-0">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-6 mb-4">
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <label class="p-0">Profession
+                                            </label>
+                                            <input value="{{$others_say->profession}}" required name="profession"
+                                                   type="text"
+                                                   placeholder="Ex: Businessman"
+                                                   class="form-control p-0 border-0">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-12 mb-4">
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <label class="p-0">What they Say</label>
+                                            <textarea name="what_they_say"
+                                                      placeholder="Ex: This is the what they actually said..."
+                                                      class="form-control p-0 border-0">
+                                                {{$others_say->what_they_say}}
+                                            </textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group mb-4">
+                                    <div class="col-sm-12">
+                                        <button type="submit" class="btn btn-outline-success">Save</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End PAge Content -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Right sidebar -->
+        <!-- ============================================================== -->
+        <!-- .right-sidebar -->
+        <!-- ============================================================== -->
+        <!-- End Right sidebar -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+@endsection

@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Storage;
 
 class ProjectsController extends Controller
 {
+    //================================================
+    //====================ADMIN=======================
+    //================================================
     /**
      * Display a listing of the resource.
      *
@@ -328,5 +331,31 @@ class ProjectsController extends Controller
             return redirect()->route('all_projects')->with($data);
 
         }
+    }
+
+    //================================================
+    //====================PUBLIC======================
+    //================================================
+    public function get_public_projects()
+    {
+        $projects = DB::connection('mysql')->select('SELECT *FROM projects ORDER BY id DESC ');
+
+        $data = array(
+            'projects' => $projects
+
+        );
+        return view('public.projects.index')->with($data);
+    }
+
+    public function get_single_public_projects($id)
+    {
+        $projects = DB::connection('mysql')->select('SELECT *FROM projects WHERE id =:id ', ['id' => $id]);
+        $related_projects = DB::connection('mysql')->select('SELECT *FROM projects WHERE id <>:id ORDER BY RAND() LIMIT 5 ', ['id' => $id]);
+
+        $data = array(
+            'project' => !empty($projects) ? $projects[0] : $projects,
+            'related_projects' => $related_projects
+        );
+        return view('public.projects.single_project')->with($data);
     }
 }

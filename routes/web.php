@@ -59,18 +59,38 @@ Route::prefix('admin')->group(function () {
 
     });
 
+    Route::prefix('others_say')->group(function () {
+
+        Route::get('/', ['App\Http\Controllers\OthersSayController', 'index'])->name('all_others_say');
+        Route::get('/create', ['App\Http\Controllers\OthersSayController', 'create']);
+        Route::post('/store', ['App\Http\Controllers\OthersSayController', 'store']);
+        Route::get('/edit/{id}', ['App\Http\Controllers\OthersSayController', 'edit']);
+        Route::put('/update/{id}', ['App\Http\Controllers\OthersSayController', 'update']);
+        Route::delete('/delete/{id}', ['App\Http\Controllers\OthersSayController', 'destroy']);
+
+    });
+
+    Route::prefix('gallery')->group(function () {
+
+        Route::get('/', ['App\Http\Controllers\GalleryController', 'index'])->name('all_gallery');
+        Route::get('/create', ['App\Http\Controllers\GalleryController', 'create']);
+        Route::post('/store', ['App\Http\Controllers\GalleryController', 'store']);
+        Route::get('/edit/{id}', ['App\Http\Controllers\GalleryController', 'edit']);
+        Route::put('/update/{id}', ['App\Http\Controllers\GalleryController', 'update']);
+        Route::delete('/delete/{id}', ['App\Http\Controllers\GalleryController', 'destroy']);
+
+    });
+
 
 });
 
 
-//Route::prefix('admin')->group(function () {
-//Route::get('/users', ['App\Http\Controllers\AdminDashboardController', 'setDashboard']);
-//Route::get('/admin2', ['App\Http\Controllers\AdminDashboardController', 'setDashboard']);
-//    Route::get('/', ['App\Http\Controllers\AdminDashboardController', 'setDashboard']);
 
-//});
-
-//Route::get('admin', ['App\Http\Controllers\AdminDashboardController', 'setDashboard']);
 Route::get('/', ['App\Http\Controllers\HomePageController', 'setHomePage']);
-//Route::get('/admin', ['App\Http\Controllers\AdminDashboardController', 'setDashboard'])->name('admin');
+//news
+Route::get('/news', ['App\Http\Controllers\NewsController', 'get_public_news']);
+Route::get('/news/{id}', ['App\Http\Controllers\NewsController', 'get_single_public_news']);
+
+Route::get('/projects', ['App\Http\Controllers\ProjectsController', 'get_public_projects']);
+Route::get('/projects/{id}', ['App\Http\Controllers\ProjectsController', 'get_single_public_projects']);
 

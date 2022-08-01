@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Storage;
 
 class NewsController extends Controller
 {
+    //================================================
+    //====================ADMIN=======================
+    //================================================
+
     /**
      * Display a listing of the resource.
      *
@@ -299,5 +303,32 @@ class NewsController extends Controller
             return redirect()->route('all_projects')->with($data);
 
         }
+    }
+
+    //================================================
+    //====================PUBLIC======================
+    //================================================
+
+    public function get_public_news()
+    {
+        $news = DB::connection('mysql')->select('SELECT *FROM news ORDER BY id DESC ');
+
+        $data = array(
+            'news' => $news
+
+        );
+        return view('public.news.index')->with($data);
+    }
+
+    public function get_single_public_news($id)
+    {
+        $news = DB::connection('mysql')->select('SELECT *FROM news WHERE id =:id ', ['id' => $id]);
+        $related_news = DB::connection('mysql')->select('SELECT *FROM news WHERE id <>:id ORDER BY RAND() LIMIT 5 ', ['id' => $id]);
+
+        $data = array(
+            'news' => !empty($news) ? $news[0] : $news,
+            'related_news' => $related_news
+        );
+        return view('public.news.single_news')->with($data);
     }
 }
