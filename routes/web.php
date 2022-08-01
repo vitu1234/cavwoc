@@ -94,3 +94,5 @@ Route::get('/news/{id}', ['App\Http\Controllers\NewsController', 'get_single_pub
 Route::get('/projects', ['App\Http\Controllers\ProjectsController', 'get_public_projects']);
 Route::get('/projects/{id}', ['App\Http\Controllers\ProjectsController', 'get_single_public_projects']);
 
+Route::get('/gallery', ['App\Http\Controllers\GalleryController', 'get_public_gallery']);
+

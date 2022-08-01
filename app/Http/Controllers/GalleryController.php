@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Storage;
 
 class GalleryController extends Controller
 {
+    //================================================
+    //====================ADMIN=======================
+    //================================================
+
     /**
      * Display a listing of the resource.
      *
@@ -233,5 +237,21 @@ class GalleryController extends Controller
             return redirect()->route('all_gallery')->with($data);
 
         }
+    }
+
+
+
+    //================================================
+    //====================PUBLIC======================
+    //================================================
+    public function get_public_gallery()
+    {
+        $gallery = DB::connection('mysql')->select('SELECT *FROM gallery ORDER BY id DESC ');
+
+        $data = array(
+            'gallery' => $gallery
+
+        );
+        return view('public.gallery.index')->with($data);
     }
 }

@@ -100,7 +100,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/events">GALLERY</a>
+                            <a class="nav-link" href="/gallery">GALLERY</a>
                         </li>
 
                         <li class="nav-item">
