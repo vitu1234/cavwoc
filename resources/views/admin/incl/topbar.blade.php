@@ -10,13 +10,13 @@
                 <!-- Logo icon -->
                 <b class="logo-icon">
                     <!-- Dark Logo icon -->
-                    <img src="plugins/images/logo-icon.png" alt="homepage"/>
+                    <img src="{{asset('admin_assets/plugins/images/logo-icon.png')}}" alt="homepage"/>
                 </b>
                 <!--End Logo icon -->
                 <!-- Logo text -->
                 <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="plugins/images/logo-text.png" alt="homepage"/>
+                            <img src="{{asset('admin_assets/plugins/images/logo-text.png')}}" alt="homepage"/>
                         </span>
             </a>
             <!-- ============================================================== -->
@@ -54,7 +54,7 @@
                 <!-- ============================================================== -->
                 <li>
                     <a class="profile-pic" href="#">
-                        <img src="plugins/images/users/varun.jpg" alt="user-img" width="36"
+                        <img src="{{asset('admin_assets/plugins/images/users/varun.jpg')}}" alt="user-img" width="36"
                              class="img-circle"><span class="text-white font-medium">Steave</span></a>
                 </li>
                 <!-- ============================================================== -->
@@ -66,3 +66,5 @@
 </header>
 <!-- ============================================================== -->
 <!-- End Topbar header -->
+
+
