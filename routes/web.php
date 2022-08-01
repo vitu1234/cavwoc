@@ -95,4 +95,5 @@ Route::get('/projects', ['App\Http\Controllers\ProjectsController', 'get_public_
 Route::get('/projects/{id}', ['App\Http\Controllers\ProjectsController', 'get_single_public_projects']);
 
 Route::get('/gallery', ['App\Http\Controllers\GalleryController', 'get_public_gallery']);
+Route::get('/about', ['App\Http\Controllers\HomePageController', 'get_public_about_page']);
 

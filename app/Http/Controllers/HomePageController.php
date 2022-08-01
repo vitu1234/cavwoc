@@ -26,4 +26,10 @@ class HomePageController extends Controller
         return view('index')->with($data);
     }
 
+    public function get_public_about_page()
+    {
+        return view('public.about.index');
+
+    }
+
 }

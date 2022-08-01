@@ -79,7 +79,7 @@
                         </ul>
 
                         <div class=""></div>
-                        <a href="#" class="btn btn-primary">READ MORE <span class="fa fa-chevron-right"></span></a>
+                        <a href="/about" class="btn btn-primary">READ MORE <span class="fa fa-chevron-right"></span></a>
                         <div class="spacer-30"></div>
 
                     </div>
