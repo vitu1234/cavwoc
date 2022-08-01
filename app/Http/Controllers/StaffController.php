@@ -287,4 +287,20 @@ class StaffController extends Controller
         }
     }
 
+    //================================================
+    //====================PUBLIC=======================
+    //================================================
+
+    public function get_all_public_staff()
+    {
+        $staff = DB::connection('mysql')->select('SELECT *FROM staff ORDER BY staff_name ASC ');
+
+        $data = array(
+            'staff_members' => $staff
+
+        );
+        return view('public.staff.index')->with($data);
+    }
+
+
 }
