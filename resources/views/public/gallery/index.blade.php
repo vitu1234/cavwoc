@@ -33,7 +33,7 @@
                                     <div class="col-xs-6 col-md-3">
                                         <div class="box-gallery">
                                             <a href="{{url('storage/gallery/'.$item->img_url)}}" title="{{$item->title}}">
-                                                <img src="{{url('storage/gallery/'.$item->img_url)}}" alt=""
+                                                <img style="height: 180px; width: 280px" src="{{url('storage/gallery/'.$item->img_url)}}" alt=""
                                                      class="img-fluid">
                                                 <div class="project-info">
                                                     <div class="project-icon">
