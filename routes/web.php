@@ -86,8 +86,11 @@ Route::prefix('admin')->group(function () {
 
 
 
-//Route::get('admin', ['App\Http\Controllers\AdminDashboardController', 'setDashboard']);
 Route::get('/', ['App\Http\Controllers\HomePageController', 'setHomePage']);
+//news
 Route::get('/news', ['App\Http\Controllers\NewsController', 'get_public_news']);
 Route::get('/news/{id}', ['App\Http\Controllers\NewsController', 'get_single_public_news']);
+
+Route::get('/projects', ['App\Http\Controllers\ProjectsController', 'get_public_projects']);
+Route::get('/projects/{id}', ['App\Http\Controllers\ProjectsController', 'get_single_public_projects']);
 

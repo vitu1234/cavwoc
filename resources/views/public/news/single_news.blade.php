@@ -66,7 +66,7 @@
                         @if(!empty($news))
                             <div class="single-news">
                                 <div class="image">
-                                    <img src="{{asset('images/dummy-img-900x600.jpg')}}"
+                                    <img src="{{url('storage/news/'.$news->img_url)}}"
                                          style="height: 300px; width: 500px"
                                          alt="" class="img-fluid img-rounded">
                                 </div>
@@ -115,23 +115,7 @@
 
 
     <!-- CTA -->
-    <div class="section cta">
-        <div class="content-wrap-20">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 col-md-12">
-                        <div class="cta-1">
-                            <div class="body-text">
-                                <h3>Join your hand with us for a better life and beautiful future.</h3>
-                            </div>
-                            <div class="body-action">
-                                <a href="#" class="btn btn-secondary">DONATE NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    @include('public.incl.cta')
+
     @include('public.incl.footer')
 @endsection
