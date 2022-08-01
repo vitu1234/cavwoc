@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+
+Route::get('admin', ['App\Http\Controllers\AdminDashboardController', 'setDashboard']);
+Route::get('/', ['App\Http\Controllers\HomePageController', 'setHomePage']);
+//Route::get('/admin', ['App\Http\Controllers\AdminDashboardController', 'setDashboard'])->name('admin');
+

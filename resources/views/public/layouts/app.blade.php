@@ -1,3 +1,12 @@
+<!--
+
+File Name: index.php
+
+Author Name: Vitumbiko Mafeni
+
+Author URI: https://www.linkedin.com/in/vitu-mafeni-074940173/
+
+License URI: https://www.linkedin.com/in/vitu-mafeni-074940173/-->
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -14,6 +23,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
+
 
     <!-- ==============================================
 	Favicons
@@ -32,6 +42,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/vendor/owl.theme.default.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/vendor/magnific-popup.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/vendor/animate.min.css')}}">
+
 
     <!-- ==============================================
     Custom Stylesheet
@@ -66,6 +77,32 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-CE0deH3Jhj6GN4YvdCFZS7DpbXexzGU&callback=initMap"></script>
 
 <script src="{{asset('js/script.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+
+<script type="application/javascript">
+    $(document).ready(function () {
+        $('.customer-logos').slick({
+            slidesToShow: 6,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 1500,
+            arrows: false,
+            dots: false,
+            pauseOnHover: false,
+            responsive: [{
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 4
+                }
+            }, {
+                breakpoint: 520,
+                settings: {
+                    slidesToShow: 3
+                }
+            }]
+        });
+    });
+</script>
 
 
 </body>
