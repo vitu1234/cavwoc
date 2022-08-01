@@ -81,9 +81,19 @@ Route::prefix('admin')->group(function () {
 
     });
 
+    Route::prefix('staff')->group(function () {
+
+        Route::get('/', ['App\Http\Controllers\StaffController', 'index'])->name('all_staff');
+        Route::get('/create', ['App\Http\Controllers\StaffController', 'create']);
+        Route::post('/store', ['App\Http\Controllers\StaffController', 'store']);
+        Route::get('/edit/{id}', ['App\Http\Controllers\StaffController', 'edit']);
+        Route::put('/update/{id}', ['App\Http\Controllers\StaffController', 'update']);
+        Route::delete('/delete/{id}', ['App\Http\Controllers\StaffController', 'destroy']);
+
+    });
+
 
 });
-
 
 
 Route::get('/', ['App\Http\Controllers\HomePageController', 'setHomePage']);

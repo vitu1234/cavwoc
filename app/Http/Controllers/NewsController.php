@@ -293,14 +293,14 @@ class NewsController extends Controller
             }
 
         } else {
-            $projects = DB::connection('mysql')->select('SELECT *FROM projects ORDER BY id DESC ');
+            $projects = DB::connection('mysql')->select('SELECT *FROM news ORDER BY id DESC ');
 
             $data = array(
-                'projects' => $projects,
+                'news' => $projects,
                 'error' => 'Failed to delete'
 
             );
-            return redirect()->route('all_projects')->with($data);
+            return redirect()->route('all_news')->with($data);
 
         }
     }
