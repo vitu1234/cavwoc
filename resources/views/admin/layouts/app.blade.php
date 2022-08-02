@@ -26,6 +26,7 @@ License URI: https://www.linkedin.com/in/vitu-mafeni-074940173/-->
           href="{{asset('admin_assets/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css')}}">
     <!-- Custom CSS -->
     <link href="{{asset('admin_assets/css/style.min.css')}}" rel="stylesheet">
+    <link href="{{asset('admin_assets/summernote/summernote-bs4.min.css')}}" rel="stylesheet">
 
 </head>
 <body>
@@ -70,6 +71,16 @@ License URI: https://www.linkedin.com/in/vitu-mafeni-074940173/-->
 <script
     src="{{asset('admin_assets/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js')}}"></script>
 <script src="{{asset('admin_assets/js/pages/dashboards/dashboard1.js')}}"></script>
+<!-- Summernote -->
+<script src="{{asset('admin_assets/summernote/summernote-bs4.min.js')}}"></script>
+<script>
+    $(function () {
+        // Summernote
+        $('textarea').summernote()
+
+
+    })
+</script>
 
 </body>
 
