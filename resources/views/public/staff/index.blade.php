@@ -109,9 +109,9 @@
         }
 
         .frontside .card .card-body img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
+            width: 100%;
+            height: 100%;
+            border-radius: 2%;
         }
     </style>
 
@@ -147,9 +147,11 @@
                                     <div class="frontside">
                                         <div class="card">
                                             <div class="card-body text-center">
-                                                <p><img class=" img-fluid"
+                                                <p>
+                                                    <img class=" img-fluid"
                                                         src="{{url('storage/staff/'.$staff->img_url)}}"
-                                                        alt="Staff Member Picture"></p>
+                                                        alt="Staff Member Picture">
+                                                </p>
                                                 <h4 class="card-title">{{$staff->title}} {{$staff->staff_name}}</h4>
                                                 <p class="card-text">{{$staff->position}}</p>
                                                 <a href="#"

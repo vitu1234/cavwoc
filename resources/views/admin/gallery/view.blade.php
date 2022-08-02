@@ -88,7 +88,7 @@
 
                                         <div class="col-md-12 border-bottom p-0">
                                             <label class="p-0">Image </label>
-                                            <input accept=".png, .jpg, .jpeg" name="img_url" type="file"
+                                            <input onclick="alert('Make sure the picture is 900x500 otherwise, website will be distorted!')" accept=".png, .jpg, .jpeg" name="img_url" type="file"
                                                    placeholder=""
                                                    class="form-control p-0 border-0">
                                         </div>

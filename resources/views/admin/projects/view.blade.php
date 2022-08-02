@@ -79,9 +79,11 @@
                                     <div class="form-group col-md-6 mb-4">
                                         <div class="col-md-12 border-bottom p-0">
                                             <label class="p-0"><b>Image - Thumbnail</b></label>
-                                            <input accept=".png, .jpg, .jpeg" name="img_url" type="file"
-                                                   placeholder=""
-                                                   class="form-control p-0 border-0">
+                                            <input
+                                                onclick="alert('Make sure the picture is 600x400 otherwise, website will be distorted!')"
+                                                accept=".png, .jpg, .jpeg" name="img_url" type="file"
+                                                placeholder=""
+                                                class="form-control p-0 border-0">
                                         </div>
                                     </div>
                                     <div class="form-group col-md-6 mb-4">
