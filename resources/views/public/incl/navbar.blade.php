@@ -85,9 +85,8 @@
                                 ABOUT
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#about">About Us</a>
-                                <a class="dropdown-item" href="#faq">FAQ</a>
-                                <a class="dropdown-item" href="#our-team">Our Team</a>
+                                <a class="dropdown-item" href="/about">About Us</a>
+                                <a class="dropdown-item" href="/our_staff">Our Staff</a>
                             </div>
                         </li>
 
@@ -100,11 +99,11 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/events">GALLERY</a>
+                            <a class="nav-link" href="/gallery">GALLERY</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/events">VACANCIES</a>
+                            <a class="nav-link" href="/vacancies">VACANCIES</a>
                         </li>
 
 

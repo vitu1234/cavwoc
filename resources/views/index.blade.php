@@ -79,7 +79,7 @@
                         </ul>
 
                         <div class=""></div>
-                        <a href="#" class="btn btn-primary">READ MORE <span class="fa fa-chevron-right"></span></a>
+                        <a href="/about" class="btn btn-primary">READ MORE <span class="fa fa-chevron-right"></span></a>
                         <div class="spacer-30"></div>
 
                     </div>
@@ -131,7 +131,8 @@
                                             <div class="progress-fundraising mt-5">
                                                 <div class="total"><small>${{number_format($project->amount_raised,2)}}
                                                         /${{number_format($project->budgeted_amount,2)}}</small></div>
-                                                <a href="/projects/{{$project->id}}" class="btn btn-sm btn-primary text-light"
+                                                <a href="/projects/{{$project->id}}"
+                                                   class="btn btn-sm btn-primary text-light"
                                                    style="float: right;">Read More</a>
                                             </div>
                                         </div>
@@ -202,6 +203,14 @@
                                 </div>
                             </div>
                         @endforeach
+                        <div class="col-sm-12 col-md-12">
+                            <div class="spacer-40"></div>
+                            <div class="text-center">
+                                <a href="/news" class="btn btn-primary">SEE ALL NEWS</a>
+                            </div>
+                            <br/>
+                            <br/>
+                        </div>
                     @else
                         <p style="width: 100%" class="mb-5 text-justify text-center text-danger alert alert-danger">No
                             News articles found, please
@@ -217,127 +226,110 @@
 
 
     <!-- OUR VOLUUNTER SAYS -->
-    <div class="section">
-        <div class="">
-            <div class="container">
-                <div class="row">
+    @if(count($others_say) > 0)
 
-                    <div class="col-sm-12 col-md-12">
-                        <h2 class="section-heading center">
-                            What <span>Others</span> Say
-                        </h2>
-                        <p class="subheading text-center">Heres' what people have to say about us
-                            Including patrons, donors, the communities.</p>
-                    </div>
+        <div class="section">
+            <div class="">
+                <div class="container">
+                    <div class="row">
 
-                    <div class="col-sm-6 col-md-6">
-                        <div class="testimonial-1">
-                            <div class="media">
-                                <img src="images/dummy-img-400x400.jpg" alt="" class="img-fluid">
-                            </div>
-                            <div class="body">
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry orem Ipsum
-                                    has been. Mauris ornare tortor in eleifend blanditullam ut ligula et neque. Nulla
-                                    interdum dapibus erat nec elementum. </p>
-                                <div class="title">John Doel</div>
-                                <div class="company">Businessman</div>
-                            </div>
+                        <div class="col-sm-12 col-md-12">
+                            <h2 class="section-heading center">
+                                What <span>Others</span> Say
+                            </h2>
+                            <p class="subheading text-center">Here's' what people have to say about us
+                                Including patrons, donors, the communities.</p>
                         </div>
-                    </div>
 
-                    <div class="col-sm-6 col-md-6">
-                        <div class="testimonial-1">
-                            <div class="media">
-                                <img src="images/dummy-img-400x400.jpg" alt="" class="img-fluid">
-                            </div>
-                            <div class="body">
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry orem Ipsum
-                                    has been. Mauris ornare tortor in eleifend blanditullam ut ligula et neque. Nulla
-                                    interdum dapibus erat nec elementum. </p>
-                                <div class="title">Raisa Doel</div>
-                                <div class="company">House Keeper</div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="col-sm-6 col-md-6">
-                        <div class="testimonial-1">
-                            <div class="media">
-                                <img src="images/dummy-img-400x400.jpg" alt="" class="img-fluid">
+                        @foreach($others_say as $say)
+                            <div class="col-sm-6 col-md-6">
+                                <div class="testimonial-1">
+                                    <div class="media">
+                                        <img src="{{url('storage/others_say/'.$say->profile_picture)}}" alt=""
+                                             class="img-fluid">
+                                    </div>
+                                    <div class="body">
+                                        <p class="text-justify text-dark">{{$say->what_they_say}}</p>
+                                        <div class="title">{{$say->fullname}} - <small>{{$say->profession}}</small>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="body">
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry orem Ipsum
-                                    has been. Mauris ornare tortor in eleifend blanditullam ut ligula et neque. Nulla
-                                    interdum dapibus erat nec elementum. </p>
-                                <div class="title">Josh Doel</div>
-                                <div class="company">Contractor</div>
-                            </div>
-                        </div>
-                    </div>
+                        @endforeach
 
-                    <div class="col-sm-6 col-md-6">
-                        <div class="testimonial-1">
-                            <div class="media">
-                                <img src="images/dummy-img-400x400.jpg" alt="" class="img-fluid">
+                        @if(count($others_say) > 4)
+                            <div class="col-sm-12 col-md-12">
+                                <div class="spacer-40"></div>
+                                <div class="text-center">
+                                    <a href="/others_say" class="btn btn-primary">SEE ALL </a>
+                                </div>
+                                <br/>
+                                <br/>
                             </div>
-                            <div class="body">
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry orem Ipsum
-                                    has been. Mauris ornare tortor in eleifend blanditullam ut ligula et neque. Nulla
-                                    interdum dapibus erat nec elementum. </p>
-                                <div class="title">Sasha Doel</div>
-                                <div class="company">Freelance</div>
-                            </div>
-                        </div>
-                    </div>
+                        @endif
 
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    @else
+        <div class="section" style="height: 10px">
+            <div class="bg-light">
+                <div class="container">
+                    <div class="row"></div>
+                </div>
+            </div>
+        </div>
+    @endif
 
     <!-- OUR PARTNERS -->
-    <div class="section" style="background-color: #cccccc">
-        <div class=" pb-5">
-            <div class="container">
-                <div class="row">
 
-                    <div class="col-sm-12 col-md-12">
-                        <h2 class="section-heading center">
-                            Our <span>Partners</span>
-                        </h2>
-                        <p class=" text-center text-light">Here are some of our partners we work with to improve the
-                            future.</p>
+    @if(count($partners) > 0)
+        <div class="section" style="background-color: #cccccc">
+            <div class=" pb-5">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-sm-12 col-md-12">
+                            <h2 class="section-heading center">
+                                Our <span>Partners</span>
+                            </h2>
+                            <p class=" text-center text-light">Here are some of our partners we work with to improve the
+                                future.</p>
+                        </div>
+
                     </div>
 
-                </div>
+                    <div class="container">
+                        <section class="customer-logos slider">
+                            @foreach($partners as $partner)
+                                <div class="slide">
+                                    <a target="_blank" href="{{$partner->link}}">
+                                        <img
+                                            src="{{url('storage/partners/'.$partner->img_url)}}"
+                                        />
+                                    </a>
+                                </div>
+                            @endforeach
 
-                <div class="container">
-                    <section class="customer-logos slider">
-                        <div class="slide"><img
-                                src="https://image.freepik.com/free-vector/luxury-letter-e-logo-design_1017-8903.jpg">
-                        </div>
-                        <div class="slide"><img
-                                src="https://image.freepik.com/free-vector/3d-box-logo_1103-876.jpg"></div>
-                        <div class="slide"><img
-                                src="https://image.freepik.com/free-vector/blue-tech-logo_1103-822.jpg"></div>
-                        <div class="slide"><img
-                                src="https://image.freepik.com/free-vector/colors-curl-logo-template_23-2147536125.jpg">
-                        </div>
-                        <div class="slide"><img
-                                src="https://image.freepik.com/free-vector/abstract-cross-logo_23-2147536124.jpg">
-                        </div>
-                        <div class="slide"><img
-                                src="https://image.freepik.com/free-vector/football-logo-background_1195-244.jpg">
-                        </div>
-                        <div class="slide"><img
-                                src="https://image.freepik.com/free-vector/background-of-spots-halftone_1035-3847.jpg">
-                        </div>
-
-                    </section>
+                        </section>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    @else
+        <div class="section" style="height: 10px">
+            <div class="bg-light">
+                <div class="container">
+                    <div class="row"></div>
+                </div>
+            </div>
+        </div>
+    @endif
+
+    <!-- OUR PARTNERS -->
+
 
     <!-- CTA -->
     @include('public.incl.cta')

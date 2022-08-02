@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Storage;
 
 class GalleryController extends Controller
 {
+    //================================================
+    //====================ADMIN=======================
+    //================================================
+
     /**
      * Display a listing of the resource.
      *
@@ -43,6 +47,7 @@ class GalleryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'title' => 'string|required',
             'img_url' => 'file|required'
         ]);
 
@@ -71,12 +76,15 @@ class GalleryController extends Controller
         $saveData = DB::connection('mysql')->insert(
             '
                 INSERT INTO gallery(
+                    title,
                     img_url
                     ) VALUES (
+                    :title,
                     :img_url
                     )
             ',
             [
+                'title' => $request->title,
                 'img_url' => $fileNamToStore
             ]
         );
@@ -125,6 +133,7 @@ class GalleryController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
+            'title' => 'string|required',
             'img_url' => 'file|required'
         ]);
 
@@ -161,11 +170,13 @@ class GalleryController extends Controller
                 '
             UPDATE gallery 
             SET           
-            img_url =:img_url
+            img_url =:img_url,
+            title =:title
             WHERE id =:id
             ',
                 [
                     'img_url' => $fileNamToStore,
+                    'title' => $request->title,
                     'id' => $id
                 ]
             );
@@ -233,5 +244,21 @@ class GalleryController extends Controller
             return redirect()->route('all_gallery')->with($data);
 
         }
+    }
+
+
+
+    //================================================
+    //====================PUBLIC======================
+    //================================================
+    public function get_public_gallery()
+    {
+        $gallery = DB::connection('mysql')->select('SELECT *FROM gallery ORDER BY id DESC ');
+
+        $data = array(
+            'gallery' => $gallery
+
+        );
+        return view('public.gallery.index')->with($data);
     }
 }

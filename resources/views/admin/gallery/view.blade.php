@@ -75,7 +75,17 @@
 
 
                                 <div class="row">
-                                    <div class="form-group col-md-12 mb-4">
+                                    <div class="form-group col-md-6 mb-4">
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <label class="p-0">Title </label>
+                                            <input value="{{$gallery->title}}" required name="title" type="text"
+                                                   placeholder="Ex: This is a title"
+                                                   class="form-control p-0 border-0">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-6 mb-4">
+
                                         <div class="col-md-12 border-bottom p-0">
                                             <label class="p-0">Image </label>
                                             <input accept=".png, .jpg, .jpeg" name="img_url" type="file"
