@@ -84,7 +84,7 @@ License URI: https://www.linkedin.com/in/vitu-mafeni-074940173/-->
         $('.textarea_').summernote({
             placeholder: 'Project context goes here...',
             tabsize: 2,
-            height: 700
+            height: 300
         });
 
 

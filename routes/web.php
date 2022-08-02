@@ -92,6 +92,17 @@ Route::prefix('admin')->group(function () {
 
     });
 
+    Route::prefix('carousel')->group(function () {
+
+        Route::get('/', ['App\Http\Controllers\CarouselController', 'index'])->name('all_carousel');
+        Route::get('/create', ['App\Http\Controllers\CarouselController', 'create']);
+        Route::post('/store', ['App\Http\Controllers\CarouselController', 'store']);
+        Route::get('/edit/{id}', ['App\Http\Controllers\CarouselController', 'edit']);
+        Route::put('/update/{id}', ['App\Http\Controllers\CarouselController', 'update']);
+        Route::delete('/delete/{id}', ['App\Http\Controllers\CarouselController', 'destroy']);
+
+    });
+
 
 });
 
