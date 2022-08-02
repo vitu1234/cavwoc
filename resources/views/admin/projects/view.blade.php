@@ -76,10 +76,20 @@
 
 
                                 <div class="row">
-                                    <div class="form-group col-md-12 mb-4">
+                                    <div class="form-group col-md-6 mb-4">
                                         <div class="col-md-12 border-bottom p-0">
-                                            <label class="p-0">Image - Thumbnail</label>
+                                            <label class="p-0"><b>Image - Thumbnail</b></label>
                                             <input accept=".png, .jpg, .jpeg" name="img_url" type="file"
+                                                   placeholder=""
+                                                   class="form-control p-0 border-0">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6 mb-4">
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <label class="p-0"><b>Document - Project
+                                                    File</b> <?php $file = !empty($project->project_file) ? '<a class="btn btn-sm btn-primary mx-2" target="_blank" href="' . url('storage/projects/' . $project->project_file) . '">View File</a>' : ''; echo $file; ?>
+                                            </label>
+                                            <input accept="application/pdf" name="project_file" type="file"
                                                    placeholder=""
                                                    class="form-control p-0 border-0">
                                         </div>
@@ -89,7 +99,7 @@
                                 <div class="row">
                                     <div class="form-group col-md-6 mb-4">
                                         <div class="col-md-12 border-bottom p-0">
-                                            <label class="p-0">Project Type</label>
+                                            <label class="p-0"><b>Project Type</b></label>
                                             <select required name="project_type"
                                                     class="form-select shadow-none p-0 border-0 form-control-line">
                                                 @if($project->project_type == 'upcoming')
@@ -119,7 +129,7 @@
 
                                     <div class="form-group col-md-6 mb-4">
                                         <div class="col-md-12 border-bottom p-0">
-                                            <label class="p-0">Project Name</label>
+                                            <label class="p-0"><b>Project Name</b></label>
                                             <input value="{{$project->project_name}}" required name="project_name"
                                                    type="text"
                                                    placeholder="Ex: Construction of school house"
@@ -131,7 +141,7 @@
                                 <div class="row">
                                     <div class="form-group col-md-6 mb-4">
                                         <div class="col-md-12 border-bottom p-0">
-                                            <label class="p-0">Project Period</label>
+                                            <label class="p-0"><b>Project Period</b></label>
                                             <input value="{{$project->project_period}}" required name="project_period"
                                                    type="text"
                                                    placeholder="Ex: 10 Jan 2021 - 20 Feb 2022"
@@ -141,10 +151,9 @@
 
                                     <div class="form-group col-md-6 mb-4">
                                         <div class="col-md-12 border-bottom p-0">
-                                            <label class="p-0">Document - Project
-                                                File <?php $file = !empty($project->project_file) ? '<a class="btn btn-sm btn-primary mx-2" target="_blank" href="' . url('storage/projects/' . $project->project_file) . '">View File</a>' : ''; echo $file; ?></label>
-                                            <input accept="application/pdf" name="project_file" type="file"
-                                                   placeholder=""
+                                            <label class="p-0"><b>Project Donor</b></label>
+                                            <input value="{{$project->project_donor}}" name="project_donor" type="text"
+                                                   placeholder="Ex: European Union"
                                                    class="form-control p-0 border-0">
                                         </div>
                                     </div>
@@ -153,7 +162,7 @@
                                 <div class="row">
                                     <div class="form-group col-md-6 mb-4">
                                         <div class="col-md-12 border-bottom p-0">
-                                            <label class="p-0">Budgeted Amount($)</label>
+                                            <label class="p-0"><b>Budgeted Amount($)</b></label>
                                             <input value="{{$project->budgeted_amount}}" required name="budgeted_amount"
                                                    type="text" placeholder="Ex: 2000"
                                                    class="form-control p-0 border-0">
@@ -162,7 +171,7 @@
 
                                     <div class="form-group col-md-6 mb-4">
                                         <div class="col-md-12 border-bottom p-0">
-                                            <label class="p-0">Amount Raised($)</label>
+                                            <label class="p-0"><b>Amount Raised($)</b></label>
                                             <input value="{{$project->amount_raised}}" required name="amount_raised"
                                                    type="text"
                                                    placeholder="Ex: 1200"
@@ -174,12 +183,21 @@
                                 <div class="row">
                                     <div class="form-group col-md-12 mb-4">
                                         <div class="col-md-12 border-bottom p-0">
-                                            <label class="p-0">Project Summary</label>
+                                            <label class="p-0"><b>Project Summary</b></label>
                                             <textarea name="project_summary"
                                                       placeholder="Description of the project"
-                                                      class="form-control p-0 border-0">
-                                                {{$project->project_summary}}
-                                            </textarea>
+                                                      class="form-control p-0 border-0">{{$project->project_summary}}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-12 mb-4">
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <label class="p-0"><b>Project Context</b></label>
+                                            <textarea name="project_context"
+                                                      placeholder="Project Context"
+                                                      class="form-control p-0 border-0 textarea_">{{$project->project_context}}</textarea>
                                         </div>
                                     </div>
                                 </div>

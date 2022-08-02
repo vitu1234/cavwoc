@@ -26,7 +26,8 @@ License URI: https://www.linkedin.com/in/vitu-mafeni-074940173/-->
           href="{{asset('admin_assets/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css')}}">
     <!-- Custom CSS -->
     <link href="{{asset('admin_assets/css/style.min.css')}}" rel="stylesheet">
-    <link href="{{asset('admin_assets/summernote/summernote-bs4.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('admin_assets/summernote/summernote-bs4.min.css')}}">
+
 
 </head>
 <body>
@@ -54,9 +55,15 @@ License URI: https://www.linkedin.com/in/vitu-mafeni-074940173/-->
 
 <!-- All Jquery -->
 <!-- ============================================================== -->
-<script src="{{asset('admin_assets/plugins/bower_components/jquery/dist/jquery.min.js')}}"></script>
+{{--<script src="{{asset('admin_assets/plugins/bower_components/jquery/dist/jquery.min.js')}}"></script>--}}
+<script src="{{asset('admin_assets/bootstrap/jquery.3.2.1.min.js')}}"></script>
+<script src="{{asset('admin_assets/bootstrap/popper.min.js')}}"></script>
+
+<script src="{{asset('admin_assets/bootstrap/bootstrap.min.js')}}"></script>
+<!-- Summernote -->
+<script src="{{asset('admin_assets//summernote/summernote-bs4.min.js')}}"></script>
+
 <!-- Bootstrap tether Core JavaScript -->
-<script src="{{asset('admin_assets/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('admin_assets/js/app-style-switcher.js')}}"></script>
 <script src="{{asset('admin_assets/plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js')}}"></script>
 <!--Wave Effects -->
@@ -71,17 +78,18 @@ License URI: https://www.linkedin.com/in/vitu-mafeni-074940173/-->
 <script
     src="{{asset('admin_assets/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js')}}"></script>
 <script src="{{asset('admin_assets/js/pages/dashboards/dashboard1.js')}}"></script>
-<!-- Summernote -->
-<script src="{{asset('admin_assets/summernote/summernote-bs4.min.js')}}"></script>
 <script>
     $(function () {
         // Summernote
-        $('textarea').summernote()
+        $('.textarea_').summernote({
+            placeholder: 'Project context goes here...',
+            tabsize: 2,
+            height: 700
+        });
 
 
-    })
+    });
 </script>
-
 </body>
 
 </html>
