@@ -32,4 +32,9 @@ class HomePageController extends Controller
 
     }
 
+    public function contact_us(){
+        return view('public.contact_us.index');
+
+    }
+
 }

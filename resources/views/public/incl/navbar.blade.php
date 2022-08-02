@@ -144,7 +144,7 @@
                         </li>
                         -->
                         <li class="nav-item">
-                            <a class="nav-link" href="#contact">CONTACT US</a>
+                            <a class="nav-link" href="/contact_us">CONTACT US</a>
                         </li>
                     </ul>
                 </div>

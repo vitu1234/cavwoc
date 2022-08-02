@@ -105,5 +105,7 @@ Route::get('/projects', ['App\Http\Controllers\ProjectsController', 'get_public_
 Route::get('/projects/{id}', ['App\Http\Controllers\ProjectsController', 'get_single_public_projects']);
 
 Route::get('/gallery', ['App\Http\Controllers\GalleryController', 'get_public_gallery']);
-Route::get('/about', ['App\Http\Controllers\HomePageController', 'get_public_about_page']);
+Route::get('/gallery', ['App\Http\Controllers\GalleryController', 'get_public_gallery']);
+Route::get('/our_staff', ['App\Http\Controllers\StaffController', 'get_all_public_staff']);
+Route::get('/contact_us', ['App\Http\Controllers\HomePageController', 'contact_us']);
 
