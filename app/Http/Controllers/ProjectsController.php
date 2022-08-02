@@ -52,6 +52,8 @@ class ProjectsController extends Controller
             'project_period' => 'string|nullable',
             'budgeted_amount' => 'string|required',
             'amount_raised' => 'string|required',
+            'project_context' => 'string|required',
+            'project_donor' => 'string|nullable',
         ]);
 
         //Handle file upload
@@ -106,7 +108,9 @@ class ProjectsController extends Controller
                     project_file, 
                     img_url, 
                     budgeted_amount, 
-                    amount_raised
+                    amount_raised,
+                    project_context,
+                    project_donor
                     ) VALUES (
                     :project_type, 
                     :project_name, 
@@ -115,7 +119,9 @@ class ProjectsController extends Controller
                     :project_file, 
                     :img_url, 
                     :budgeted_amount, 
-                    :amount_raised
+                    :amount_raised,
+                    :project_context,
+                    :project_donor
                     )
             ',
             [
@@ -126,7 +132,9 @@ class ProjectsController extends Controller
                 'project_file' => $project_file_name,
                 'img_url' => $fileNamToStore,
                 'budgeted_amount' => $request->budgeted_amount,
-                'amount_raised' => $request->amount_raised
+                'amount_raised' => $request->amount_raised,
+                'project_context' => $request->project_context,
+                'project_donor' => $request->project_donor
             ]
         );
         if ($saveData) {
@@ -180,6 +188,8 @@ class ProjectsController extends Controller
             'project_period' => 'string|nullable',
             'budgeted_amount' => 'string|required',
             'amount_raised' => 'string|required',
+            'project_context' => 'string|required',
+            'project_donor' => 'string|nullable',
         ]);
 
 
@@ -248,7 +258,9 @@ class ProjectsController extends Controller
             project_file =:project_file,
             img_url =:img_url,
             budgeted_amount =:budgeted_amount,
-            amount_raised =:amount_raised
+            amount_raised =:amount_raised,
+            project_context =:project_context,
+            project_donor =:project_donor
                 
             WHERE id =:id
             ',
@@ -261,6 +273,8 @@ class ProjectsController extends Controller
                     'img_url' => $fileNamToStore,
                     'budgeted_amount' => $request->budgeted_amount,
                     'amount_raised' => $request->amount_raised,
+                    'project_context' => $request->project_context,
+                    'project_donor' => $request->project_donor,
                     'id' => $id
                 ]
             );

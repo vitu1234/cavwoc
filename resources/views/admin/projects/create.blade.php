@@ -61,10 +61,21 @@
 
 
                                 <div class="row">
-                                    <div class="form-group col-md-12 mb-4">
+                                    <div class="form-group col-md-6 mb-4">
                                         <div class="col-md-12 border-bottom p-0">
-                                            <label class="p-0">Image - Thumbnail</label>
-                                            <input required accept=".png, .jpg, .jpeg" name="img_url" type="file"
+                                            <label class="p-0"><b>Image - Thumbnail</b></label>
+                                            <input
+                                                onclick="alert('Make sure the picture is 600x400 otherwise, website will be distorted!')"
+                                                required accept=".png, .jpg, .jpeg" name="img_url" type="file"
+                                                placeholder=""
+                                                class="form-control p-0 border-0">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-6 mb-4">
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <label class="p-0"><b>Document - Project File</b></label>
+                                            <input accept="application/pdf" name="project_file" type="file"
                                                    placeholder=""
                                                    class="form-control p-0 border-0">
                                         </div>
@@ -87,7 +98,7 @@
 
                                     <div class="form-group col-md-6 mb-4">
                                         <div class="col-md-12 border-bottom p-0">
-                                            <label class="p-0">Project Name</label>
+                                            <label class="p-0"><b>Project Name</b></label>
                                             <input required name="project_name" type="text"
                                                    placeholder="Ex: Construction of school house"
                                                    class="form-control p-0 border-0">
@@ -98,7 +109,7 @@
                                 <div class="row">
                                     <div class="form-group col-md-6 mb-4">
                                         <div class="col-md-12 border-bottom p-0">
-                                            <label class="p-0">Project Period</label>
+                                            <label class="p-0"><b>Project Period</b></label>
                                             <input required name="project_period" type="text"
                                                    placeholder="Ex: 10 Jan 2021 - 20 Feb 2022"
                                                    class="form-control p-0 border-0">
@@ -107,9 +118,9 @@
 
                                     <div class="form-group col-md-6 mb-4">
                                         <div class="col-md-12 border-bottom p-0">
-                                            <label class="p-0">Document - Project File</label>
-                                            <input accept="application/pdf" name="project_file" type="file"
-                                                   placeholder=""
+                                            <label class="p-0"><b>Project Donor</b></label>
+                                            <input name="project_donor" type="text"
+                                                   placeholder="Ex: European Union"
                                                    class="form-control p-0 border-0">
                                         </div>
                                     </div>
@@ -118,7 +129,7 @@
                                 <div class="row">
                                     <div class="form-group col-md-6 mb-4">
                                         <div class="col-md-12 border-bottom p-0">
-                                            <label class="p-0">Budgeted Amount($)</label>
+                                            <label class="p-0"><b>Budgeted Amount($)</b></label>
                                             <input required name="budgeted_amount" type="text" placeholder="Ex: 2000"
                                                    class="form-control p-0 border-0">
                                         </div>
@@ -126,7 +137,7 @@
 
                                     <div class="form-group col-md-6 mb-4">
                                         <div class="col-md-12 border-bottom p-0">
-                                            <label class="p-0">Amount Raised($)</label>
+                                            <label class="p-0"><b>Amount Raised($)</b></label>
                                             <input required name="amount_raised" type="text"
                                                    placeholder="Ex: 1200"
                                                    class="form-control p-0 border-0">
@@ -137,10 +148,21 @@
                                 <div class="row">
                                     <div class="form-group col-md-12 mb-4">
                                         <div class="col-md-12 border-bottom p-0">
-                                            <label class="p-0">Project Summary</label>
+                                            <label class="p-0"><b>Project Summary</b></label>
                                             <textarea name="project_summary"
                                                       placeholder="Description of the project"
                                                       class="form-control p-0 border-0"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-12 mb-4">
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <label class="p-0"><b>Project Context</b></label>
+                                            <textarea rows="7" name="project_context"
+                                                      placeholder="Project Context"
+                                                      class="form-control p-0 border-0 textarea_"></textarea>
                                         </div>
                                     </div>
                                 </div>
