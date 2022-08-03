@@ -43,7 +43,7 @@
                                 ?>
                                 @foreach($others_say as $say )
                                     <tr>
-                                        <td><img class="img-rounded img-thumbnail"
+                                        <td><img class="img-rounded "
                                                  src="{{url('storage/others_say/'.$say->profile_picture)}}"
                                                  height="50" width="80"/></td>
 

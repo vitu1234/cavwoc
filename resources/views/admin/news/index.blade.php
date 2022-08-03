@@ -43,14 +43,14 @@
                                 ?>
                                 @foreach($news as $article )
                                     <tr>
-                                        <td><img class="img-rounded img-thumbnail"
+                                        <td><img class=""
                                                  src="{{url('storage/news/'.$article->img_url)}}"
                                                  height="50" width="80"/></td>
-                                        <td>{{ \Illuminate\Support\Str::of( $article->title)->words(10,'...')}}  <?php
+                                        <td>{{ \Illuminate\Support\Str::of( $article->title)->words(5,'...')}}  <?php
                                             $file = !empty($article->attachment_url) ? '<a class="btn btn-sm btn-primary mx-2" target="_blank" href="' . url('storage/news/' . $article->attachment_url) . '">Attached File</a>' : '';
                                             echo $file;
                                             ?></td>
-                                        <td>{{ \Illuminate\Support\Str::of( $article->body)->words(10,'...')}}</td>
+                                        <td>{{ \Illuminate\Support\Str::of( $article->body)->words(7,'...')}}</td>
                                         <td>{{$article->created_at}}</td>
 
                                         </td>

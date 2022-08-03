@@ -3,22 +3,8 @@
 @section('content')
 
     <!-- BANNER -->
-    <div class="section banner-page" data-background="{{asset('images/dummy-img-1920x300.jpg')}}">
-        <div class="content-wrap pos-relative">
-            <div class="d-flex justify-content-center bd-highlight mb-3">
-                <div class="title-page">NEWS DETAIL</div>
-            </div>
-            <div class="d-flex justify-content-center bd-highlight mb-3">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb ">
-                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item"><a href="/news">News</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">NEWS DETAIL</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-    </div>
+    @include('public.incl.banner')
+
 
     <!-- CONTENT -->
     <div class="section">
@@ -52,11 +38,10 @@
                                 QUICK LINKS
                             </div>
                             <div class="tagcloud">
-                                <a href="#" title="3 topics">About Us</a>
-                                <a href="#" title="1 topic">FAQ</a>
-                                <a href="#" title="1 topic">Projects</a>
-                                <a href="#" title="4 topics">Vacancies</a>
-                                <a href="#" title="2 topics">Our Team</a>
+                                <a href="/about" title="3 topics">About Us</a>
+                                <a href="/projects" title="1 topic">Projects</a>
+                                <a href="/vacancies" title="4 topics">Vacancies</a>
+                                <a href="/our_staff" title="2 topics">Our Staff</a>
                             </div>
                         </div>
 

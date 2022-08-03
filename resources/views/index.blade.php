@@ -8,11 +8,11 @@
             @foreach($carousels as $carousel )
                 <div class="owl-slide">
                     <div class="item">
-                        <img src="/storage/carousel/{{$carousel->img_url}}" alt="Slider">
+                        <img src="{{url('storage/carousel/'.$carousel->img_url)}}" alt="Slider">
                         <div class="slider-pos">
                             <div class="container">
                                 <div class="">
-                                    <h1 class="caption-heading bg"><span>{{$carousel->title}}</span></h1>
+                                    <h1 class="caption-heading "><span>{{$carousel->title}}</span></h1>
                                     <p class="bg">{{$carousel->subtitle}}</p>
                                     {{--                                    <a href="#" class="btn btn-primary">DONATE NOW</a>--}}
                                 </div>
@@ -86,7 +86,7 @@
 
                     <div class="col-sm-6 col-md-6">
 
-                        <img src="images/dummy-img-600x400.jpg" alt="" class="img-fluid img-border">
+                        <img src="{{asset('images/logo_600_400.jpg')}}" alt="Logo CAVWOC" class="img-fluid img-border">
 
                     </div>
                 </div>
@@ -161,7 +161,7 @@
     </div>
 
     <!-- NEWS -->
-    <div class="section" style="background-color: #cccccc">
+    <div class="section" style="background-color: rgba(204,204,204,0.45)">
         <div class="">
             <div class="container">
                 <div class="row">
@@ -286,7 +286,7 @@
     <!-- OUR PARTNERS -->
 
     @if(count($partners) > 0)
-        <div class="section" style="background-color: #cccccc">
+        <div class="section bg-light" >
             <div class=" pb-5">
                 <div class="container">
                     <div class="row">
@@ -295,7 +295,7 @@
                             <h2 class="section-heading center">
                                 Our <span>Partners</span>
                             </h2>
-                            <p class=" text-center text-light">Here are some of our partners we work with to improve the
+                            <p class=" text-center text-dark">Here are some of our partners we work with to improve the
                                 future.</p>
                         </div>
 

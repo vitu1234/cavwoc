@@ -3,22 +3,8 @@
 @section('content')
 
     <!-- BANNER -->
-    <div class="section banner-page" data-background="{{asset('images/dummy-img-1920x300.jpg')}}">
-        <div class="content-wrap pos-relative">
-            <div class="d-flex justify-content-center bd-highlight mb-3">
-                <div class="title-page">PROJECT DETAIL</div>
-            </div>
-            <div class="d-flex justify-content-center bd-highlight mb-3">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb ">
-                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item"><a href="/projects">Projects</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">PROJECT DETAIL</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-    </div>
+    @include('public.incl.banner')
+
 
     <!-- CONTENT -->
     <!-- HOW TO HELP US -->

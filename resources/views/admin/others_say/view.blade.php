@@ -79,7 +79,7 @@
                                     <div class="form-group col-md-12 mb-4">
                                         <div class="col-md-12 border-bottom p-0">
                                             <label class="p-0">Image - Profile</label>
-                                            <input accept=".png, .jpg, .jpeg" name="profile_picture"
+                                            <input onclick="alert('Make sure the picture is 640x640 otherwise, website will be distorted!')" accept=".png, .jpg, .jpeg" name="profile_picture"
                                                    type="file"
                                                    placeholder=""
                                                    class="form-control p-0 border-0">

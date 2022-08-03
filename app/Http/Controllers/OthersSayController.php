@@ -66,7 +66,7 @@ class OthersSayController extends Controller
             $path = $request->file('profile_picture')->storeAs('public/others_say', $fileNamToStore);
 
         } else {
-            $fileNamToStore = 'noimage.jpg';
+            $fileNamToStore = 'blank_pic.png';
         }
 
 
@@ -161,7 +161,7 @@ class OthersSayController extends Controller
                 //upload the image
                 $path = $request->file('profile_picture')->storeAs('public/others_say', $fileNamToStore);
 
-                if ($checkOthersSay[0]->profile_picture != 'noimage.jpg') {
+                if ($checkOthersSay[0]->profile_picture != 'blank_pic.png') {
                     //delete image
                     Storage::delete('public/others_say/' . $checkOthersSay[0]->profile_picture);
                 }
@@ -216,7 +216,7 @@ class OthersSayController extends Controller
 
             $delete = DB::connection('mysql')->select('DELETE FROM others_say WHERE id=:id', ['id' => $id]);
             if ($delete) {
-                if ($checkOthersSay[0]->profile_picture != 'noimage.jpg') {
+                if ($checkOthersSay[0]->profile_picture != 'blank_pic.png') {
                     //delete image
                     Storage::delete('public/others_say/' . $checkOthersSay[0]->profile_picture);
                 }

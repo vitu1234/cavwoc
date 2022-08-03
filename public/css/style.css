@@ -3727,13 +3727,13 @@ Back To Top Section
   z-index: 999;
   width: 100%; }
   .header-1 .navbar-main {
-    background-color: #222222; }
+    background-color: rgba(34, 34, 34, 0.58); }
     .header-1 .navbar-main .navbar-brand {
       position: absolute;
       /*left: 40px;*/
       top: -75px; }
     .header-1 .navbar-main .navbar-nav .nav-link {
-      color: #ffffff; }
+      color: #fff; }
       .header-1 .navbar-main .navbar-nav .nav-link:hover, .header-1 .navbar-main .navbar-nav .nav-link:focus {
         color: #f8902d; }
     .header-1 .navbar-main .navbar-nav .active > .nav-link {
@@ -3946,6 +3946,7 @@ Back To Top Section
       background-size: cover;
       background-position: center; }
   .banner .item {
+      background-color: rgba(0, 0, 0, 0.50);
     position: relative; }
   .banner .slider-pos {
     position: absolute;
@@ -3960,14 +3961,14 @@ Back To Top Section
     .banner h1 span, .banner .panel-pricing .price span, .panel-pricing .banner .price span {
       color: #f8902d; }
     .banner h1.bg, .banner .panel-pricing .bg.price, .panel-pricing .banner .bg.price {
-      background-color: rgba(51, 51, 51, 0.5);
+      background-color: rgba(85, 99, 104, 0.59);
       padding: 20px; }
   .banner p {
     font-size: 18px;
     color: #ffffff;
     padding: 0; }
     .banner p.bg {
-      background-color: rgba(255, 255, 255, 0.5);
+      background-color: rgba(255, 255, 255, 0.58);
       padding: 20px;
       color: #333333; }
   .banner .owl-controls .owl-nav [class*=owl-] {
