@@ -8,10 +8,11 @@
             @foreach($carousels as $carousel )
                 <div class="owl-slide">
                     <div class="item">
-                        <img src="{{url('storage/carousel/'.$carousel->img_url)}}" alt="Slider">
+                        <img style="height: 30px;" src="{{url('storage/carousel/'.$carousel->img_url)}}"
+                             alt="Slider">
                         <div class="slider-pos">
                             <div class="container">
-                                <div class="">
+                                <div class="" style="">
                                     <h1 class="caption-heading "><span>{{$carousel->title}}</span></h1>
                                     <p class="bg">{{$carousel->subtitle}}</p>
                                     {{--                                    <a href="#" class="btn btn-primary">DONATE NOW</a>--}}
@@ -191,7 +192,7 @@
                                     <div class="body-content">
                                         <div style="height: 80px !important; margin-top: 5px;">
                                             <p style="max-height: 50px" class="title"><a
-                                                    href="/news/{{$article->id}}">{{ \Illuminate\Support\Str::of($article->title)->words(15,'...')}}</a>
+                                                    href="/news/{{$article->id}}">{{ \Illuminate\Support\Str::of($article->title)->words(10,'...')}}</a>
                                             </p>
                                             <div
                                                 class="text text-justify text-dark">{{ \Illuminate\Support\Str::of( $article->body)->words(15,'...')}}
@@ -286,7 +287,7 @@
     <!-- OUR PARTNERS -->
 
     @if(count($partners) > 0)
-        <div class="section bg-light" >
+        <div class="section bg-light">
             <div class=" pb-5">
                 <div class="container">
                     <div class="row">

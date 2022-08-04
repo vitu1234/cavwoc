@@ -33,10 +33,10 @@
                                     <div class="body-content">
                                         <div style="height: 80px !important; margin-top: 5px;">
                                             <p style="max-height: 50px" class="title"><a
-                                                    href="/news/{{$article->id}}">{{ \Illuminate\Support\Str::of($article->title)->words(20,'...')}}</a>
+                                                    href="/news/{{$article->id}}">{{ \Illuminate\Support\Str::of($article->title)->words(10,'...')}}</a>
                                             </p>
                                             <div
-                                                class="text text-justify text-dark">{{ \Illuminate\Support\Str::of( $article->body)->words(20,'...')}}
+                                                class="text text-justify text-dark">{{ \Illuminate\Support\Str::of( $article->body)->words(15,'...')}}
                                             </div>
                                         </div>
                                         <div class="spacer-30"></div>

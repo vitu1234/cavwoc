@@ -1734,6 +1734,7 @@ Back To Top Section
 .progress-fundraising .detail {
   margin-top: 20px;
   color: #f8902d;
+    font-size: 10px;
   /*small{
   	color: $white;
   }*/ }

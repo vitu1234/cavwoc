@@ -47,8 +47,8 @@
                 <!-- ============================================================== -->
                 <li>
                     <a class="profile-pic" href="#">
-                        <img src="{{asset('admin_assets/plugins/images/users/varun.jpg')}}" alt="user-img" width="36"
-                             class="img-circle"><span class="text-white font-medium">Steave</span></a>
+                        <img src="{{asset('admin_assets/plugins/images/users/d5.jpg')}}" alt="user-img" width="36"
+                             class="img-circle"><span class="text-white font-medium">Admin</span></a>
                 </li>
                 <!-- ============================================================== -->
                 <!-- User profile and search -->
