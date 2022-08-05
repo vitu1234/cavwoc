@@ -1,9 +1,9 @@
 $(document).ready(function(){
 
 	"use strict";
-	
+
 	/* =================================
-	LOADER 
+	LOADER
 	=================================== */
 	$(".loader").delay(400).fadeOut();
     $(".animationload").delay(400).fadeOut("fast");
@@ -38,17 +38,17 @@ $(document).ready(function(){
 
 	});
 
-	
+
 	/* =================================
-	NAVBAR 
+	NAVBAR
 	=================================== */
 	var top = jQuery(document).scrollTop();
 	var batas = 200;
 	var navbar = jQuery('.navbar-main');
 	var navbarnav = jQuery('.navbar-nav');
 	var header = jQuery('.header');
-	
-	
+
+
 	if ( top > batas ) {
 		navbar.addClass('stiky');
 		navbarnav.addClass('ml-auto');
@@ -56,22 +56,22 @@ $(document).ready(function(){
 	jQuery(window).scroll(function () {
 		top = jQuery(document).scrollTop();
 
-		
+
 		if ( top > batas ) {
 			navbar.addClass('stiky');
 			navbarnav.addClass('ml-auto');
 		}else {
-			navbar.removeClass('stiky'); 
+			navbar.removeClass('stiky');
 			if(header.hasClass('header-1')){
 				navbarnav.removeClass('ml-auto');
 			}
 		}
-		
+
 
 	});
-	
+
 	/* =================================
-	BANNER ROTATOR IMAGE 
+	BANNER ROTATOR IMAGE
 	=================================== */
 	var slides = $("#oc-fullslider"),
         b = slides.find('.owl-slide');
@@ -80,23 +80,23 @@ $(document).ready(function(){
             ocImg = e.find('img').attr('src');
             e.css({'background-image': 'url(' + ocImg + ')'});
 
-            console.log('tes ' + ocImg); 
+            console.log('tes ' + ocImg);
         });
 
 
-    slides.owlCarousel({
-        items: 1,
-        autoplay: true,
-        autoplayTimeout: 5000,
-        autoplayHoverPause: true,
-        loop: true,
-        animateIn: 'fadeIn',
-        animateOut: 'rollOut',
-        pagination: false,
-        nav: true,
-		navText: ["<span class='fa fa-chevron-left'></span>", "<span class='fa fa-chevron-right'></span>"],
-		dots: false,
-    }); 
+    // slides.owlCarousel({
+    //     items: 1,
+    //     autoplay: true,
+    //     autoplayTimeout: 5000,
+    //     autoplayHoverPause: true,
+    //     loop: true,
+    //     animateIn: 'fadeIn',
+    //     animateOut: 'rollOut',
+    //     pagination: false,
+    //     nav: true,
+	// 	navText: ["<span class='fa fa-chevron-left'></span>", "<span class='fa fa-chevron-right'></span>"],
+	// 	dots: false,
+    // });
 
     slides.on('translate.owl.carousel',function(e){
 	    $('.owl-item video').each(function(){
@@ -108,7 +108,7 @@ $(document).ready(function(){
   	})
 
 	/* =================================
-	BACK TO TOP 
+	BACK TO TOP
 	=================================== */
 	// browser window scroll (in pixels) after which the "back to top" link is shown
 	var offset = 300,
@@ -122,7 +122,7 @@ $(document).ready(function(){
 	//hide or show the "back to top" link
 	$(window).scroll(function(){
 		( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
-		if( $(this).scrollTop() > offset_opacity ) { 
+		if( $(this).scrollTop() > offset_opacity ) {
 			$back_to_top.addClass('cd-fade-out');
 		}
 	});
@@ -135,64 +135,64 @@ $(document).ready(function(){
 		 	}, scroll_top_duration
 		);
 	});
-	
+
 
 	/* =================================
 	OWL
 	=================================== */
-	
-	var caro = $("#caro");
-	caro.owlCarousel({
-		items: 1,
-		autoplay: true,
-		autoplayTimeout: 5000,
-		autoplayHoverPause: true,
-		loop: true,
-	});	
-	var caro2 = $("#caro-2");
-	caro2.owlCarousel({
-		autoplay: true,
-		margin: 30,
-		autoplayTimeout: 5000,
-		autoplayHoverPause: true,
-		items : 3,
-		dots: true,
-		loop: true,
-		responsive:{
-			0:{
-				items:1
-			},
-			768:{
-				items:2
-			},
-			1000:{
-				items:3
-			}
-		}
-	});
-	var testimony = $("#testimonial");
-	testimony.owlCarousel({
-		items: 1,
-		autoplay: true,
-		autoplayTimeout: 5000,
-		autoplayHoverPause: true,
-		loop: true,
-		animateIn: 'fadeIn',
-        animateOut: 'fadeOut',
-	});
-	
-	var testimony2 = $("#owl-testimony2");
-	testimony2.owlCarousel({
-		items: 1,
-		autoplay: true,
-		autoplayTimeout: 5000,
-		autoplayHoverPause: true,
-		navText: ["<span class='fa fa-chevron-left'></span>", "<span class='fa fa-chevron-right'></span>"],
-		dots: true,
-		loop: true
-	});
-	
-	
+
+	// var caro = $("#caro");
+	// caro.owlCarousel({
+	// 	items: 1,
+	// 	autoplay: true,
+	// 	autoplayTimeout: 5000,
+	// 	autoplayHoverPause: true,
+	// 	loop: true,
+	// });
+	// var caro2 = $("#caro-2");
+	// caro2.owlCarousel({
+	// 	autoplay: true,
+	// 	margin: 30,
+	// 	autoplayTimeout: 5000,
+	// 	autoplayHoverPause: true,
+	// 	items : 3,
+	// 	dots: true,
+	// 	loop: true,
+	// 	responsive:{
+	// 		0:{
+	// 			items:1
+	// 		},
+	// 		768:{
+	// 			items:2
+	// 		},
+	// 		1000:{
+	// 			items:3
+	// 		}
+	// 	}
+	// });
+	// var testimony = $("#testimonial");
+	// testimony.owlCarousel({
+	// 	items: 1,
+	// 	autoplay: true,
+	// 	autoplayTimeout: 5000,
+	// 	autoplayHoverPause: true,
+	// 	loop: true,
+	// 	animateIn: 'fadeIn',
+    //     animateOut: 'fadeOut',
+	// });
+	//
+	// var testimony2 = $("#owl-testimony2");
+	// testimony2.owlCarousel({
+	// 	items: 1,
+	// 	autoplay: true,
+	// 	autoplayTimeout: 5000,
+	// 	autoplayHoverPause: true,
+	// 	navText: ["<span class='fa fa-chevron-left'></span>", "<span class='fa fa-chevron-right'></span>"],
+	// 	dots: true,
+	// 	loop: true
+	// });
+	//
+	//
 	/* =================================
 	MAGNIFIC POPUP
 	=================================== */
@@ -224,12 +224,11 @@ $(document).ready(function(){
 	  }
 	});
 
-	
-	
+
+
 });
 
 
 
 
-  
-  
+
