@@ -144,3 +144,6 @@ Route::get('/about', ['App\Http\Controllers\HomePageController', 'get_public_abo
 Route::get('/annual_reports', ['App\Http\Controllers\AnnualReportsController', 'get_public_annual_reports']);
 Route::get('/annual_reports/{id}', ['App\Http\Controllers\AnnualReportsController', 'get_single_public_projects']);
 
+Route::get('/donations', ['App\Http\Controllers\DonationsController', 'get_public_donations']);
+Route::get('/donations/{id}', ['App\Http\Controllers\DonationsController', 'get_single_public_donation']);
+

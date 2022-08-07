@@ -274,26 +274,26 @@ class DonationsController extends Controller
     //================================================
     //====================PUBLIC======================
     //================================================
-    public function get_public_projects()
+    public function get_public_donations()
     {
         $donations = DB::connection('mysql')->select('SELECT *FROM donations ORDER BY id DESC ');
 
         $data = array(
-            'donations' => $donations
+            'projects' => $donations
 
         );
         return view('public.donations.index')->with($data);
     }
 
-    public function get_single_public_donations($id)
+    public function get_single_public_donation($id)
     {
         $donations = DB::connection('mysql')->select('SELECT *FROM donations WHERE id =:id ', ['id' => $id]);
         $related_projects = DB::connection('mysql')->select('SELECT *FROM donations WHERE id <>:id ORDER BY RAND() LIMIT 5 ', ['id' => $id]);
 
         $data = array(
-            'donation' => !empty($donations) ? $donations[0] : $donations,
+            'project' => !empty($donations) ? $donations[0] : $donations,
             'related_donations' => $related_projects
         );
-        return view('public.donations.single_project')->with($data);
+        return view('public.donations.single_donation')->with($data);
     }
 }
