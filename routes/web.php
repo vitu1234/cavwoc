@@ -114,6 +114,15 @@ Route::prefix('admin')->group(function () {
 
     });
 
+    Route::prefix('donations')->group(function () {
+        Route::get('/', ['App\Http\Controllers\DonationsController', 'index'])->name('all_donations');
+        Route::get('/create', ['App\Http\Controllers\DonationsController', 'create']);
+        Route::post('/store', ['App\Http\Controllers\DonationsController', 'store']);
+        Route::get('/edit/{id}', ['App\Http\Controllers\DonationsController', 'edit']);
+        Route::put('/update/{id}', ['App\Http\Controllers\DonationsController', 'update']);
+        Route::delete('/delete/{id}', ['App\Http\Controllers\DonationsController', 'destroy']);
+    });
+
 
 });
 

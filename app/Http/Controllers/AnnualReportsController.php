@@ -237,7 +237,7 @@ class AnnualReportsController extends Controller
                     'error' => 'Deleting image from galleryfailed'
 
                 );
-                return redirect()->route('all_gallery')->with($data);
+                return redirect()->route('all_annual_reports')->with($data);
             }
 
         } else {
@@ -248,7 +248,7 @@ class AnnualReportsController extends Controller
                 'error' => 'Deleting image from galleryfailed'
 
             );
-            return redirect()->route('all_gallery')->with($data);
+            return redirect()->route('all_annual_reports')->with($data);
 
         }
     }
