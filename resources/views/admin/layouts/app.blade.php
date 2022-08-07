@@ -27,6 +27,7 @@ License URI: https://www.linkedin.com/in/vitu-mafeni-074940173/-->
     <!-- Custom CSS -->
     <link href="{{asset('admin_assets/css/style.min.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('admin_assets/summernote/summernote-bs4.min.css')}}">
+    <link rel="stylesheet" href="{{asset('datatable/datatables.min.css')}}">
 
 
 </head>
@@ -57,6 +58,8 @@ License URI: https://www.linkedin.com/in/vitu-mafeni-074940173/-->
 <!-- ============================================================== -->
 {{--<script src="{{asset('admin_assets/plugins/bower_components/jquery/dist/jquery.min.js')}}"></script>--}}
 <script src="{{asset('admin_assets/bootstrap/jquery.3.2.1.min.js')}}"></script>
+<script src="{{asset('datatable/datatables.min.js')}}"></script>
+
 <script src="{{asset('admin_assets/bootstrap/popper.min.js')}}"></script>
 
 <script src="{{asset('admin_assets/bootstrap/bootstrap.min.js')}}"></script>
@@ -81,11 +84,27 @@ License URI: https://www.linkedin.com/in/vitu-mafeni-074940173/-->
 <script>
     $(function () {
         // Summernote
-        $('.textarea_').summernote({
-            placeholder: 'Project context goes here...',
-            tabsize: 2,
-            height: 300
-        });
+        if ($(".textarea_").length > 0) {
+            $('.textarea_').summernote({
+                placeholder: 'Project context goes here...',
+                tabsize: 2,
+                height: 300
+            });
+        }
+
+        if ($("table").length > 0) {
+            //datatable
+            var table = $('table').DataTable({
+                columnDefs: [
+                    {bSortable: false, targets: [0]}
+                ],
+                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                "aaSorting": []
+
+
+            });
+
+        }
 
 
     });

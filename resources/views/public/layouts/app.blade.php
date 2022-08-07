@@ -52,11 +52,14 @@ License URI: https://www.linkedin.com/in/vitu-mafeni-074940173/-->
     <script src="{{asset('js/vendor/modernizr.min.js')}}"></script>
 
     {{--  NIVO AWESOME SLIDER  --}}
-{{--    <link rel="stylesheet" href="{{asset('nivo_slider/themes/default/default.css')}}" type="text/css" media="screen" />--}}
-{{--    <link rel="stylesheet" href="{{asset('nivo_slider/nivo-slider.css')}}" type="text/css" media="screen" />--}}
+    {{--    <link rel="stylesheet" href="{{asset('nivo_slider/themes/default/default.css')}}" type="text/css" media="screen" />--}}
+    {{--    <link rel="stylesheet" href="{{asset('nivo_slider/nivo-slider.css')}}" type="text/css" media="screen" />--}}
 
-    <link rel="stylesheet" href="{{asset('nivo_slider/new/nivo-slider-theme.css')}}" type="text/css" media="screen" />
-    <link rel="stylesheet" href="{{asset('nivo_slider/nivo-slider.css')}}" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{asset('nivo_slider/new/nivo-slider-theme.css')}}" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="{{asset('nivo_slider/nivo-slider.css')}}" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="{{asset('datatable/datatables.min.css')}}">
+
+
 </head>
 <body>
 
@@ -69,6 +72,8 @@ License URI: https://www.linkedin.com/in/vitu-mafeni-074940173/-->
 
 <!-- JS VENDOR -->
 <script src="{{asset('js/vendor/jquery.min.js')}}"></script>
+<script src="{{asset('datatable/datatables.min.js')}}"></script>
+
 <script src="{{asset('js/vendor/bootstrap.min.js')}}"></script>
 {{--<script src="{{asset('js/vendor/owl.carousel.js')}}"></script>--}}
 <script src="{{asset('js/vendor/jquery.magnific-popup.min.js')}}"></script>
@@ -90,26 +95,44 @@ License URI: https://www.linkedin.com/in/vitu-mafeni-074940173/-->
 
 <script type="application/javascript">
     $(document).ready(function () {
-        $('.customer-logos').slick({
-            slidesToShow: 6,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 1500,
-            arrows: false,
-            dots: false,
-            pauseOnHover: false,
-            responsive: [{
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 4
-                }
-            }, {
-                breakpoint: 520,
-                settings: {
-                    slidesToShow: 3
-                }
-            }]
-        });
+        if ($("#news_table").length > 0) {
+            //datatable
+            var table = $('#news_table').DataTable({
+                columnDefs: [
+                    {bSortable: false, targets: [0]}
+                ],
+                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                "aaSorting": []
+
+
+            });
+
+        }
+
+        if ($(".customer-logos").length > 0) {
+            $('.customer-logos').slick({
+                slidesToShow: 6,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 1500,
+                arrows: false,
+                dots: false,
+                pauseOnHover: false,
+                responsive: [{
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 4
+                    }
+                }, {
+                    breakpoint: 520,
+                    settings: {
+                        slidesToShow: 3
+                    }
+                }]
+            });
+        }
+
+
     });
     //---------------------------------------------
     //Nivo slider
@@ -129,6 +152,7 @@ License URI: https://www.linkedin.com/in/vitu-mafeni-074940173/-->
         prevText: 'Prev', // Prev directionNav text
         nextText: 'Next', // Next directionNav text
     });
+
 
 </script>
 {{--<script type="text/javascript">--}}

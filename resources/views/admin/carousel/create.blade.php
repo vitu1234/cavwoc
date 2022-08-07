@@ -83,7 +83,7 @@
                                         <div class="col-md-12 border-bottom p-0">
                                             <label class="p-0"><b>Image</b> </label>
                                             <input
-                                                onclick="alert('Make sure the picture is 1440x450 otherwise, website will be distorted!')"
+                                                onclick="alert('Make sure the picture is 1280x450 otherwise, website will be distorted!')"
                                                 required accept=".png, .jpg, .jpeg" name="img_url" type="file"
                                                 placeholder=""
                                                 class="form-control p-0 border-0">
