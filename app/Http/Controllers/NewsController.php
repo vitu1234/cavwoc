@@ -311,7 +311,7 @@ class NewsController extends Controller
 
     public function get_public_news()
     {
-        $news = DB::connection('mysql')->select('SELECT *FROM news ORDER BY id DESC ');
+        $news = DB::connection('mysql')->select('SELECT *FROM news ORDER BY created_at DESC ');
 
         $data = array(
             'news' => $news

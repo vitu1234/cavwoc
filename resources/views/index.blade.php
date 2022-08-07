@@ -2,42 +2,120 @@
 
 @section('content')
     <!-- BANNER -->
-    <div id="oc-fullslider" class="banner owl-carousel">
+    <div id="oc-fullslider" class="slider-area ">
 
-        @if(count($carousels) > 0)
-            @foreach($carousels as $carousel )
-                <div class="owl-slide">
-                    <div class="item">
-                        <img src="/storage/carousel/{{$carousel->img_url}}" alt="Slider">
-                        <div class="slider-pos">
-                            <div class="container">
-                                <div class="">
-                                    <h1 class="caption-heading bg"><span>{{$carousel->title}}</span></h1>
-                                    <p class="bg">{{$carousel->subtitle}}</p>
-                                    {{--                                    <a href="#" class="btn btn-primary">DONATE NOW</a>--}}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        @else
 
-            <div class="owl-slide">
-                <div class="item">
-                    <img src="images/dummy-img-1920x900.jpg" alt="Slider">
-                    <div class="slider-pos">
-                        <div class="container">
-                            <div class="wrap-caption right">
-                                <h1 class="caption-heading bg"><span>#EndViolence</span> For Every Woman</h1>
-                                <p class="bg">remipsum dolor sit amet consectetur adipisicing</p>
-                                <a href="#" class="btn btn-primary">DONATE NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="bend niceties preview-2">
+            <div id="slider" class="slides">
+
+            <?php
+            foreach ($carousels as $carousel) {
+                echo '<img src="' . url('storage/carousel/' . $carousel->img_url) . '" alt="" title="#htmlcaption' . $carousel->id . '" />';
+            }
+
+            ?>
+
+
+            <!--  <img src="images/banner_new4.png" alt="" title="#slider-direction-2" />
+                 <img src="images/banner_new5.png" alt="" title="#slider-direction-3" />
+                  <img src="images/banner_new3.png" alt="" title="#slider-direction-4" />
+                   <img src="images/banner_new1.png" alt="" title="#slider-direction-5" />
+                   <img src="images/images/banner2.png" alt="" title="#slider-direction-6" />
+                 <img src="images/images/banner3.png" alt="" title="#slider-direction-7" /> -->
             </div>
-        @endif
+
+
+        <?php
+
+        foreach ($carousels as $row) {
+        ?>
+        <!-- This part of caption is called from the second image link above see  `#htmlcaption` there -->
+            <div id="htmlcaption<?=$row->id?>" class="nivo-html-caption">
+
+                <h4><b><?=$row->title?></b></h4>
+
+                <p><?=$row->subtitle?></p>
+                <br/>
+            </div>
+
+            {{--            <div id="slider-direction-<?= $row->id ?>" class="slider-direction slider-one">--}}
+            {{--                <div class="container">--}}
+            {{--                    <div class="row">--}}
+            {{--                        <div class="col-md-12 col-sm-12 col-xs-12">--}}
+            {{--                            <div class="slider-content">--}}
+            {{--                                <!-- layer 1 -->--}}
+            {{--                                <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s"--}}
+            {{--                                     data-wow-delay=".2s">--}}
+            {{--                                    <h2 class="title1"><?= $row->title ?> </h2>--}}
+            {{--                                </div>--}}
+            {{--                                <!-- layer 2 -->--}}
+            {{--                                <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">--}}
+            {{--                                    <h1 class="title2"><?= $row->subtitle ?></h1>--}}
+            {{--                                </div>--}}
+            {{--                                <!-- layer 3 -->--}}
+            {{--                                <!----}}
+            {{--                                                <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">--}}
+            {{--                                                  <a class="ready-btn right-btn page-scroll" href="#services">See Services</a>--}}
+            {{--                                                </div>--}}
+            {{--                                -->--}}
+            {{--                            </div>--}}
+            {{--                        </div>--}}
+            {{--                    </div>--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
+
+            <?php
+            }
+
+            ?>
+
+
+        </div>
+
+
+        {{--        <div id="slider" class="nivoSlider">--}}
+        {{--            @foreach($carousels as $carousel )--}}
+        {{--                <img id="slider-direction{{$carousel->id}}" src="{{url('storage/carousel/'.$carousel->img_url)}}" title="{{$carousel->title}}"--}}
+        {{--                     data-thumb="{{url('storage/carousel/'.$carousel->img_url)}}" alt=""/>--}}
+        {{--            @endforeach--}}
+        {{--        </div>--}}
+
+
+        {{--        @if(count($carousels) > 0)--}}
+        {{--            @foreach($carousels as $carousel )--}}
+        {{--                <div class="owl-slide">--}}
+        {{--                    <div class="item">--}}
+        {{--                        <img style="" src="{{url('storage/carousel/'.$carousel->img_url)}}"--}}
+        {{--                             alt="Slider">--}}
+        {{--                        <div class="slider-pos">--}}
+        {{--                            <div class="container">--}}
+        {{--                                <div class="" style="">--}}
+        {{--                                    <h1 class="caption-heading "><span>{{$carousel->title}}</span></h1>--}}
+        {{--                                    <p class="bg">{{$carousel->subtitle}}</p>--}}
+        {{--                                    --}}{{--                                    <a href="#" class="btn btn-primary">DONATE NOW</a>--}}
+        {{--                                </div>--}}
+        {{--                            </div>--}}
+        {{--                        </div>--}}
+        {{--                    </div>--}}
+        {{--                </div>--}}
+        {{--            @endforeach--}}
+        {{--        @else--}}
+
+        {{--            <div class="owl-slide">--}}
+        {{--                <div class="item">--}}
+        {{--                    <img src="images/dummy-img-1920x900.jpg" alt="Slider">--}}
+        {{--                    <div class="slider-pos">--}}
+        {{--                        <div class="container">--}}
+        {{--                            <div class="wrap-caption right">--}}
+        {{--                                <h1 class="caption-heading bg"><span>#EndViolence</span> For Every Woman</h1>--}}
+        {{--                                <p class="bg">remipsum dolor sit amet consectetur adipisicing</p>--}}
+        {{--                                <a href="#" class="btn btn-primary">DONATE NOW</a>--}}
+        {{--                            </div>--}}
+        {{--                        </div>--}}
+        {{--                    </div>--}}
+        {{--                </div>--}}
+        {{--            </div>--}}
+        {{--        @endif--}}
     </div>
 
     <div class="clearfix"></div>
@@ -86,7 +164,7 @@
 
                     <div class="col-sm-6 col-md-6">
 
-                        <img src="images/dummy-img-600x400.jpg" alt="" class="img-fluid img-border">
+                        <img src="{{asset('images/logo_600_400.jpg')}}" alt="Logo CAVWOC" class="img-fluid img-border">
 
                     </div>
                 </div>
@@ -161,7 +239,7 @@
     </div>
 
     <!-- NEWS -->
-    <div class="section" style="background-color: #cccccc">
+    <div class="section" style="background-color: rgba(204,204,204,0.45)">
         <div class="">
             <div class="container">
                 <div class="row">
@@ -191,7 +269,7 @@
                                     <div class="body-content">
                                         <div style="height: 80px !important; margin-top: 5px;">
                                             <p style="max-height: 50px" class="title"><a
-                                                    href="/news/{{$article->id}}">{{ \Illuminate\Support\Str::of($article->title)->words(15,'...')}}</a>
+                                                    href="/news/{{$article->id}}">{{ \Illuminate\Support\Str::of($article->title)->words(10,'...')}}</a>
                                             </p>
                                             <div
                                                 class="text text-justify text-dark">{{ \Illuminate\Support\Str::of( $article->body)->words(15,'...')}}
@@ -286,7 +364,7 @@
     <!-- OUR PARTNERS -->
 
     @if(count($partners) > 0)
-        <div class="section" style="background-color: #cccccc">
+        <div class="section bg-light">
             <div class=" pb-5">
                 <div class="container">
                     <div class="row">
@@ -295,7 +373,7 @@
                             <h2 class="section-heading center">
                                 Our <span>Partners</span>
                             </h2>
-                            <p class=" text-center text-light">Here are some of our partners we work with to improve the
+                            <p class=" text-center text-dark">Here are some of our partners we work with to improve the
                                 future.</p>
                         </div>
 

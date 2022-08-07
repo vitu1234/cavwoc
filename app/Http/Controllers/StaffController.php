@@ -75,7 +75,7 @@ class StaffController extends Controller
             $path = $request->file('img_url')->storeAs('public/staff', $fileNamToStore);
 
         } else {
-            $fileNamToStore = "noimage.jpg";
+            $fileNamToStore = "blank_pic.png";
         }
 
 
@@ -182,7 +182,7 @@ class StaffController extends Controller
                 //upload the image
                 $path = $request->file('img_url')->storeAs('public/staff', $fileNamToStore);
 
-                if ($checkStaff[0]->img_url != 'noimage.jpg') {
+                if ($checkStaff[0]->img_url != 'blank_pic.png') {
                     //delete image
                     Storage::delete('public/staff/' . $checkStaff[0]->img_url);
                 }
@@ -246,7 +246,7 @@ class StaffController extends Controller
 
             $delete = DB::connection('mysql')->select('DELETE FROM staff WHERE id=:id', ['id' => $id]);
             if ($delete) {
-                if ($checkStaff[0]->img_url != 'noimage.jpg') {
+                if ($checkStaff[0]->img_url != 'blank_pic.png') {
                     //delete image
                     Storage::delete('public/staff/' . $checkStaff[0]->img_url);
                 }
@@ -260,7 +260,7 @@ class StaffController extends Controller
                 );
                 return redirect()->route('all_staff')->with($data);
             } else {
-                if ($checkStaff[0]->img_url != 'noimage.jpg') {
+                if ($checkStaff[0]->img_url != 'blank_pic.png') {
                     //delete image
                     Storage::delete('public/staff/' . $checkStaff[0]->img_url);
                 }

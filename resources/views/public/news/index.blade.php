@@ -3,21 +3,8 @@
 @section('content')
 
     <!-- BANNER -->
-    <div class="section banner-page" data-background="{{asset('images/dummy-img-1920x300.jpg')}}">
-        <div class="content-wrap pos-relative">
-            <div class="d-flex justify-content-center bd-highlight mb-3">
-                <div class="title-page">NEWS</div>
-            </div>
-            <div class="d-flex justify-content-center bd-highlight mb-3">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb ">
-                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">NEWS</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-    </div>
+    @include('public.incl.banner')
+
 
     <!-- HOW TO HELP US -->
     <div class="section">
@@ -46,10 +33,10 @@
                                     <div class="body-content">
                                         <div style="height: 80px !important; margin-top: 5px;">
                                             <p style="max-height: 50px" class="title"><a
-                                                    href="/news/{{$article->id}}">{{ \Illuminate\Support\Str::of($article->title)->words(20,'...')}}</a>
+                                                    href="/news/{{$article->id}}">{{ \Illuminate\Support\Str::of($article->title)->words(10,'...')}}</a>
                                             </p>
                                             <div
-                                                class="text text-justify text-dark">{{ \Illuminate\Support\Str::of( $article->body)->words(20,'...')}}
+                                                class="text text-justify text-dark">{{ \Illuminate\Support\Str::of( $article->body)->words(15,'...')}}
                                             </div>
                                         </div>
                                         <div class="spacer-30"></div>

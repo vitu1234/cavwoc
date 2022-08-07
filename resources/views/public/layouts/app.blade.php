@@ -51,6 +51,12 @@ License URI: https://www.linkedin.com/in/vitu-mafeni-074940173/-->
 
     <script src="{{asset('js/vendor/modernizr.min.js')}}"></script>
 
+    {{--  NIVO AWESOME SLIDER  --}}
+{{--    <link rel="stylesheet" href="{{asset('nivo_slider/themes/default/default.css')}}" type="text/css" media="screen" />--}}
+{{--    <link rel="stylesheet" href="{{asset('nivo_slider/nivo-slider.css')}}" type="text/css" media="screen" />--}}
+
+    <link rel="stylesheet" href="{{asset('nivo_slider/new/nivo-slider-theme.css')}}" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{asset('nivo_slider/nivo-slider.css')}}" type="text/css" media="screen" />
 </head>
 <body>
 
@@ -64,7 +70,7 @@ License URI: https://www.linkedin.com/in/vitu-mafeni-074940173/-->
 <!-- JS VENDOR -->
 <script src="{{asset('js/vendor/jquery.min.js')}}"></script>
 <script src="{{asset('js/vendor/bootstrap.min.js')}}"></script>
-<script src="{{asset('js/vendor/owl.carousel.js')}}"></script>
+{{--<script src="{{asset('js/vendor/owl.carousel.js')}}"></script>--}}
 <script src="{{asset('js/vendor/jquery.magnific-popup.min.js')}}"></script>
 
 <!-- SENDMAIL -->
@@ -78,6 +84,9 @@ License URI: https://www.linkedin.com/in/vitu-mafeni-074940173/-->
 
 <script src="{{asset('js/script.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+{{--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>--}}
+{{--<script type="text/javascript" src="{{asset('nivo_slider/jquery.nivo.slider.js')}}"></script>--}}
+<script type="text/javascript" src="{{asset('nivo_slider/new/jquery.nivo.slider.js')}}"></script>
 
 <script type="application/javascript">
     $(document).ready(function () {
@@ -102,8 +111,31 @@ License URI: https://www.linkedin.com/in/vitu-mafeni-074940173/-->
             }]
         });
     });
-</script>
+    //---------------------------------------------
+    //Nivo slider
+    //---------------------------------------------
+    $('#slider').nivoSlider({
+        effect: 'random',
+        slices: 50,
+        boxCols: 12,
+        boxRows: 8,
+        animSpeed: 700,
+        pauseTime: 7000,
+        startSlide: 0,
+        directionNav: true,
+        controlNavThumbs: false,
+        pauseOnHover: true,
+        manualAdvance: false,
+        prevText: 'Prev', // Prev directionNav text
+        nextText: 'Next', // Next directionNav text
+    });
 
+</script>
+{{--<script type="text/javascript">--}}
+{{--    $(window).load(function() {--}}
+{{--        $('#slider').nivoSlider();--}}
+{{--    });--}}
+{{--</script>--}}
 
 </body>
 </html>

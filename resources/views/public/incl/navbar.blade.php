@@ -51,7 +51,7 @@
                     </div>
                     <div class="body-content">
                         <div class="heading"><br/></div>
-                        +(265) 052 39876
+                        +265 999 589 463
                     </div>
                 </div>
                 <!-- INFO 3 -->

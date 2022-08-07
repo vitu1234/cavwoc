@@ -74,7 +74,7 @@
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/staff"
                        aria-expanded="false">
-                        <i class="fa fa-table" aria-hidden="true"></i>
+                        <i class="fa fa-people-carry" aria-hidden="true"></i>
                         <span class="hide-menu">Staff</span>
                     </a>
                 </li>
