@@ -38,7 +38,21 @@
                         <span class="hide-menu">Projects</span>
                     </a>
                 </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/donations"
+                       aria-expanded="false">
+                        <i class="fa fa-donate" aria-hidden="true"></i>
+                        <span class="hide-menu">Donations</span>
+                    </a>
+                </li>
 
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/annual_reports"
+                       aria-expanded="false">
+                        <i class="fa fa-file" aria-hidden="true"></i>
+                        <span class="hide-menu">Annual Reports</span>
+                    </a>
+                </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/news"
                        aria-expanded="false">

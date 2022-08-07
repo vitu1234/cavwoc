@@ -20,6 +20,14 @@
                 <div class="title-page">NEWS</div>
             @elseif(Request::is('projects/*'))
                 <div class="title-page">PROJECTS</div>
+            @elseif(Request::is('annual_reports'))
+                <div class="title-page">ANNUAL REPORTS</div>
+            @elseif(Request::is('annual_reports/*'))
+                <div class="title-page">ANNUAL REPORTS</div>
+            @elseif(Request::is('donations'))
+                <div class="title-page">DONATIONS</div>
+            @elseif(Request::is('donations/*'))
+                <div class="title-page">DONATIONS</div>
             @endif
 
         </div>
@@ -46,6 +54,14 @@
                         <li class="breadcrumb-item active" aria-current="page">NEWS</li>
                     @elseif(Request::is('projects/*'))
                         <li class="breadcrumb-item active" aria-current="page">PROJECTS</li>
+                    @elseif(Request::is('annual_reports'))
+                        <li class="breadcrumb-item active" aria-current="page">ANNUAL REPORTS</li>
+                    @elseif(Request::is('annual_reports/*'))
+                        <li class="breadcrumb-item active" aria-current="page">ANNUAL REPORTS</li>
+                    @elseif(Request::is('donations'))
+                        <li class="breadcrumb-item active" aria-current="page">DONATIONS</li>
+                    @elseif(Request::is('donations/*'))
+                        <li class="breadcrumb-item active" aria-current="page">DONATIONS</li>
                     @else
 
                     @endif

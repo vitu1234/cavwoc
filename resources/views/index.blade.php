@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- BANNER -->
-    <div id="oc-fullslider" class="slider-area ">
+    <div id="oc-fullslider" class="slider-area mt-1">
 
 
         <div class="bend niceties preview-2">

@@ -103,6 +103,26 @@ Route::prefix('admin')->group(function () {
 
     });
 
+    Route::prefix('annual_reports')->group(function () {
+
+        Route::get('/', ['App\Http\Controllers\AnnualReportsController', 'index'])->name('all_annual_reports');
+        Route::get('/create', ['App\Http\Controllers\AnnualReportsController', 'create']);
+        Route::post('/store', ['App\Http\Controllers\AnnualReportsController', 'store']);
+        Route::get('/edit/{id}', ['App\Http\Controllers\AnnualReportsController', 'edit']);
+        Route::put('/update/{id}', ['App\Http\Controllers\AnnualReportsController', 'update']);
+        Route::delete('/delete/{id}', ['App\Http\Controllers\AnnualReportsController', 'destroy']);
+
+    });
+
+    Route::prefix('donations')->group(function () {
+        Route::get('/', ['App\Http\Controllers\DonationsController', 'index'])->name('all_donations');
+        Route::get('/create', ['App\Http\Controllers\DonationsController', 'create']);
+        Route::post('/store', ['App\Http\Controllers\DonationsController', 'store']);
+        Route::get('/edit/{id}', ['App\Http\Controllers\DonationsController', 'edit']);
+        Route::put('/update/{id}', ['App\Http\Controllers\DonationsController', 'update']);
+        Route::delete('/delete/{id}', ['App\Http\Controllers\DonationsController', 'destroy']);
+    });
+
 
 });
 
@@ -120,4 +140,10 @@ Route::get('/gallery', ['App\Http\Controllers\GalleryController', 'get_public_ga
 Route::get('/our_staff', ['App\Http\Controllers\StaffController', 'get_all_public_staff']);
 Route::get('/contact_us', ['App\Http\Controllers\HomePageController', 'contact_us']);
 Route::get('/about', ['App\Http\Controllers\HomePageController', 'get_public_about_page']);
+
+Route::get('/annual_reports', ['App\Http\Controllers\AnnualReportsController', 'get_public_annual_reports']);
+Route::get('/annual_reports/{id}', ['App\Http\Controllers\AnnualReportsController', 'get_single_public_projects']);
+
+Route::get('/donations', ['App\Http\Controllers\DonationsController', 'get_public_donations']);
+Route::get('/donations/{id}', ['App\Http\Controllers\DonationsController', 'get_single_public_donation']);
 

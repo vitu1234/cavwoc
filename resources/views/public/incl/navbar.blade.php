@@ -13,7 +13,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-7 col-md-6">
-                    <p><small>CAVWOC: Centre for Alternatives for Victimized Women and Children
+                    <p><small><b>CAVWOC: Centre for Alternatives for Victimized Women and Children</b>
                         </small></p>
                 </div>
                 <div class="col-sm-5 col-md-6">
@@ -21,7 +21,7 @@
                         <a href="#"><i class="fa fa-facebook"></i></a>
                         <a href="#"><i class="fa fa-twitter"></i></a>
                         <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-pinterest"></i></a>
+{{--                        <a href="#"><i class="fa fa-pinterest"></i></a>--}}
                     </div>
                 </div>
             </div>
@@ -56,7 +56,7 @@
                 </div>
                 <!-- INFO 3 -->
                 <div class="box-act">
-                    <a href="#" class="btn btn-lg btn-primary">DONATE NOW</a>
+                    <a href="/donations" class="btn btn-lg btn-primary">DONATE NOW</a>
                 </div>
 
             </div>
@@ -68,7 +68,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg">
                 <a class="navbar-brand" href="/">
-                    <img style="height: 50px !important;" src="{{asset('images/logo.png')}}" alt=""/>
+                    <img style="height: 50px  !important; width: 80px !important;" src="{{asset('images/logo.png')}}" alt=""/>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -87,6 +87,7 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item" href="/about">About Us</a>
                                 <a class="dropdown-item" href="/our_staff">Our Staff</a>
+                                <a class="dropdown-item" href="/annual_reports">Annual Reports</a>
                             </div>
                         </li>
 
