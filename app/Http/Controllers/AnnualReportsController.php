@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
-class AnnualReports extends Controller
+class AnnualReportsController extends Controller
 {
     //================================================
     //====================ADMIN=======================
