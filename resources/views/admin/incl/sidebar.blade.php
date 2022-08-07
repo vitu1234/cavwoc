@@ -95,7 +95,7 @@
 
 
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="admin/vacancies"
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/vacancies"
                        aria-expanded="false">
                         <i class="fa fa-font" aria-hidden="true"></i>
                         <span class="hide-menu">Vacancies</span>
