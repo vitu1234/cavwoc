@@ -258,14 +258,26 @@ class AnnualReportsController extends Controller
     //================================================
     //====================PUBLIC======================
     //================================================
-    public function get_public_gallery()
+    public function get_public_annual_reports()
     {
-        $annual_reports = DB::connection('mysql')->select('SELECT *FROM annual_reports ORDER BY id DESC ');
+        $projects = DB::connection('mysql')->select('SELECT *FROM annual_reports ORDER BY id DESC ');
 
         $data = array(
-            'annual_reports' => $annual_reports
+            'annual_reports' => $projects
 
         );
         return view('public.annual_reports.index')->with($data);
+    }
+
+    public function get_single_public_projects($id)
+    {
+        $projects = DB::connection('mysql')->select('SELECT *FROM annual_reports WHERE id =:id ', ['id' => $id]);
+        $related_projects = DB::connection('mysql')->select('SELECT *FROM annual_reports WHERE id <>:id ORDER BY RAND() LIMIT 5 ', ['id' => $id]);
+
+        $data = array(
+            'report' => !empty($projects) ? $projects[0] : $projects,
+            'related_reports' => $related_projects
+        );
+        return view('public.annual_reports.single_project')->with($data);
     }
 }

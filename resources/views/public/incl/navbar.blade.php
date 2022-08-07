@@ -87,6 +87,7 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item" href="/about">About Us</a>
                                 <a class="dropdown-item" href="/our_staff">Our Staff</a>
+                                <a class="dropdown-item" href="/annual_reports">Annual Reports</a>
                             </div>
                         </li>
 

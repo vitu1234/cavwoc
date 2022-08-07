@@ -141,3 +141,6 @@ Route::get('/our_staff', ['App\Http\Controllers\StaffController', 'get_all_publi
 Route::get('/contact_us', ['App\Http\Controllers\HomePageController', 'contact_us']);
 Route::get('/about', ['App\Http\Controllers\HomePageController', 'get_public_about_page']);
 
+Route::get('/annual_reports', ['App\Http\Controllers\AnnualReportsController', 'get_public_annual_reports']);
+Route::get('/annual_reports/{id}', ['App\Http\Controllers\AnnualReportsController', 'get_single_public_projects']);
+
