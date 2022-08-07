@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
 
 class VacanciesController extends Controller
 {
@@ -204,7 +203,7 @@ class VacanciesController extends Controller
     //================================================
     //====================PUBLIC======================
     //================================================
-    public function get_public_donations()
+    public function get_public_vacancies()
     {
         $vacancies = DB::connection('mysql')->select('SELECT *FROM vacancies ORDER BY id DESC ');
 
@@ -215,7 +214,7 @@ class VacanciesController extends Controller
         return view('public.vacancies.index')->with($data);
     }
 
-    public function get_single_public_donation($id)
+    public function get_single_public_vacancy($id)
     {
         $vacancies = DB::connection('mysql')->select('SELECT *FROM vacancies WHERE id =:id ', ['id' => $id]);
         $related_projects = DB::connection('mysql')->select('SELECT *FROM vacancies WHERE id <>:id ORDER BY RAND() LIMIT 5 ', ['id' => $id]);
@@ -224,6 +223,6 @@ class VacanciesController extends Controller
             'vacancy' => !empty($vacancies) ? $vacancies[0] : $vacancies,
             'related_donations' => $related_projects
         );
-        return view('public.vacancies.single_donation')->with($data);
+        return view('public.vacancies.single_vacancy')->with($data);
     }
 }

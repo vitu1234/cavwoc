@@ -156,3 +156,5 @@ Route::get('/annual_reports/{id}', ['App\Http\Controllers\AnnualReportsControlle
 Route::get('/donations', ['App\Http\Controllers\DonationsController', 'get_public_donations']);
 Route::get('/donations/{id}', ['App\Http\Controllers\DonationsController', 'get_single_public_donation']);
 
+Route::get('/vacancies', ['App\Http\Controllers\VacanciesController', 'get_public_vacancies']);
+Route::get('/vacancies/{id}', ['App\Http\Controllers\VacanciesController', 'get_single_public_vacancy']);
