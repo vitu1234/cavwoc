@@ -103,6 +103,17 @@ Route::prefix('admin')->group(function () {
 
     });
 
+    Route::prefix('annual_reports')->group(function () {
+
+        Route::get('/', ['App\Http\Controllers\AnnualReports', 'index'])->name('all_annual_reports');
+        Route::get('/create', ['App\Http\Controllers\AnnualReports', 'create']);
+        Route::post('/store', ['App\Http\Controllers\AnnualReports', 'store']);
+        Route::get('/edit/{id}', ['App\Http\Controllers\AnnualReports', 'edit']);
+        Route::put('/update/{id}', ['App\Http\Controllers\AnnualReports', 'update']);
+        Route::delete('/delete/{id}', ['App\Http\Controllers\AnnualReports', 'destroy']);
+
+    });
+
 
 });
 
