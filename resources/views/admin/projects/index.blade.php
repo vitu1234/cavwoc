@@ -31,7 +31,7 @@
                                     <th class="border-top-0"><b></b></th>
                                     <th class="border-top-0"><b>Project Type</b></th>
                                     <th class="border-top-0"><b>Project Name</b></th>
-                                    <th class="border-top-0"><b>Project Period</b></th>
+{{--                                    <th class="border-top-0"><b>Project Period</b></th>--}}
                                     <th class="border-top-0"><b>Project Budget</b></th>
                                     <th class="border-top-0"><b>Action</b></th>
                                 </tr>
@@ -44,7 +44,7 @@
                                 ?>
                                 @foreach($projects as $project )
                                     <tr>
-                                        <td><img class="img-rounded img-thumbnail"
+                                        <td><img class="img-rounded "
                                                  src="{{url('storage/projects/'.$project->img_url)}}"
                                                  height="50" width="80"/></td>
                                         <td>{{ucfirst($project->project_type)}} </td>
@@ -52,7 +52,7 @@
                                             $file = !empty($project->project_file) ? '<a class="btn btn-sm btn-primary mx-2" target="_blank" href="' . url('storage/projects/' . $project->project_file) . '">Project File</a>' : '';
                                             echo $file;
                                             ?></td>
-                                        <td>{{$project->project_period}}</td>
+{{--                                        <td>{{$project->project_period}}</td>--}}
                                         <td class="text-center">$ {{number_format($project->budgeted_amount)}}
 
                                         </td>
