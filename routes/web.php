@@ -123,6 +123,15 @@ Route::prefix('admin')->group(function () {
         Route::delete('/delete/{id}', ['App\Http\Controllers\DonationsController', 'destroy']);
     });
 
+    Route::prefix('vacancies')->group(function () {
+        Route::get('/', ['App\Http\Controllers\VacanciesController', 'index'])->name('all_vacancies');
+        Route::get('/create', ['App\Http\Controllers\VacanciesController', 'create']);
+        Route::post('/store', ['App\Http\Controllers\VacanciesController', 'store']);
+        Route::get('/edit/{id}', ['App\Http\Controllers\VacanciesController', 'edit']);
+        Route::put('/update/{id}', ['App\Http\Controllers\VacanciesController', 'update']);
+        Route::delete('/delete/{id}', ['App\Http\Controllers\VacanciesController', 'destroy']);
+    });
+
 
 });
 
@@ -147,3 +156,5 @@ Route::get('/annual_reports/{id}', ['App\Http\Controllers\AnnualReportsControlle
 Route::get('/donations', ['App\Http\Controllers\DonationsController', 'get_public_donations']);
 Route::get('/donations/{id}', ['App\Http\Controllers\DonationsController', 'get_single_public_donation']);
 
+Route::get('/vacancies', ['App\Http\Controllers\VacanciesController', 'get_public_vacancies']);
+Route::get('/vacancies/{id}', ['App\Http\Controllers\VacanciesController', 'get_single_public_vacancy']);
