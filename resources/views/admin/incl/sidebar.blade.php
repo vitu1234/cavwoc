@@ -103,7 +103,7 @@
                 </li>
 
                 <li class="text-center  ">
-                    <a href="/admin/logout"
+                    <a href="/logout"
                        class="btn d-grid btn-danger text-white">
                         <i class="fa fa-power-off" aria-hidden="true"></i>Logout</a>
                 </li>
