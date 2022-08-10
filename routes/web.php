@@ -143,6 +143,11 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
         Route::delete('/delete/{id}', ['App\Http\Controllers\VacanciesController', 'destroy']);
     });
 
+    Route::prefix('profile')->group(function () {
+        Route::get('{id}', ['App\Http\Controllers\UsersController', 'view_user_profile']);
+        Route::put('{id}', ['App\Http\Controllers\UsersController', 'update']);
+    });
+
 
 });
 
