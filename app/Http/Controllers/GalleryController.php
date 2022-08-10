@@ -48,9 +48,8 @@ class GalleryController extends Controller
     {
         $request->validate([
             'title' => 'string|required',
-            'img_url' => 'file|required'
+            'img_url' => 'file|required|max:3000'
         ]);
-
         //Handle file upload
         if ($request->hasFile('img_url')) {
             // get filename with extension
@@ -134,7 +133,7 @@ class GalleryController extends Controller
     {
         $request->validate([
             'title' => 'string|required',
-            'img_url' => 'file|required'
+            'img_url' => 'file|required|max:3000'
         ]);
 
 

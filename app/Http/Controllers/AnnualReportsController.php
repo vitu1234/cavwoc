@@ -46,10 +46,11 @@ class AnnualReportsController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
             'title' => 'string|required',
             'description' => 'string|nullable',
-            'report_url' => 'file|required'
+            'report_url' => 'file|required|max:10000'
         ]);
 
         //Handle file upload
@@ -139,15 +140,18 @@ class AnnualReportsController extends Controller
         $request->validate([
             'title' => 'string|required',
             'description' => 'string|nullable',
-            'report_url' => 'file|nullable'
+            'report_url' => 'file|nullable|max:3000'
         ]);
-
+//        echo '<pre>';
+////        print_r($request->file('report_url')->getFileInfo());
+//        echo '</pre>';
+//        die();
 
         $checkGallery = DB::connection('mysql')->select('SELECT * FROM annual_reports WHERE id =:id', ['id' => $id]);
         if (!empty($checkGallery)) {
             //Handle file upload
             if ($request->hasFile('report_url')) {
-                // get filename with extension
+                              // get filename with extension
                 $fileNameWithExt = $request->file('report_url')->getClientOriginalName();
 
                 //get just filename
