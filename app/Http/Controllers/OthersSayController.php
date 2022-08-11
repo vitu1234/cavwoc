@@ -46,10 +46,11 @@ class OthersSayController extends Controller
             'fullname' => 'string|required|max:100',
             'what_they_say' => 'string|required|max:255',
             'profession' => 'string|required|max:30',
+            'profile_picture' => 'image|nullable|max:3000',
         ]);
 
         //Handle file upload
-        if ($request->hasFile('profile_picture')) {
+        if ($request->file('profile_picture') != null) {
             // get filename with extension
             $fileNameWithExt = $request->file('profile_picture')->getClientOriginalName();
 
@@ -139,13 +140,14 @@ class OthersSayController extends Controller
             'fullname' => 'string|required|max:100',
             'what_they_say' => 'string|required|max:255',
             'profession' => 'string|required|max:30',
+            'profile_picture' => 'image|nullable|max:3000',
         ]);
 
 
         $checkOthersSay = DB::connection('mysql')->select('SELECT * FROM others_say WHERE id =:id', ['id' => $id]);
         if (!empty($checkOthersSay)) {
             //Handle file upload
-            if ($request->hasFile('profile_picture')) {
+            if ($request->file('profile_picture') != null) {
                 // get filename with extension
                 $fileNameWithExt = $request->file('profile_picture')->getClientOriginalName();
 
@@ -192,7 +194,7 @@ class OthersSayController extends Controller
                 return redirect()->back()->with('success', 'What others say - updated successfully.');
             } else {
                 return redirect()->back()
-                    ->with('error', 'Failed updating - What others say');
+                    ->with('error', 'Failed updating - What others say,  change something on the fields to update!');
             }
         } else {
             return redirect()->back()

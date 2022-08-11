@@ -54,11 +54,12 @@ class StaffController extends Controller
             'staff_email' => 'string|nullable|max:60',
             'staff_phone' => 'string|nullable|max:15',
             'position' => 'string|required|max:60',
-            'staff_bio' => 'string|required'
+            'staff_bio' => 'string|required',
+            'img_url' => 'image|nullable|max:3000',
         ]);
 
         //Handle file upload
-        if ($request->hasFile('img_url')) {
+        if ($request->file('img_url') != null) {
             // get filename with extension
             $fileNameWithExt = $request->file('img_url')->getClientOriginalName();
 
@@ -159,14 +160,15 @@ class StaffController extends Controller
             'staff_email' => 'string|nullable|max:60',
             'staff_phone' => 'string|nullable|max:15',
             'position' => 'string|required|max:60',
-            'staff_bio' => 'string|required'
+            'staff_bio' => 'string|required',
+            'img_url' => 'image|nullable|max:3000'
         ]);
 
 
         $checkStaff = DB::connection('mysql')->select('SELECT * FROM staff WHERE id =:id', ['id' => $id]);
         if (!empty($checkStaff)) {
             //Handle file upload
-            if ($request->hasFile('img_url')) {
+            if ($request->file('img_url') != null) {
                 // get filename with extension
                 $fileNameWithExt = $request->file('img_url')->getClientOriginalName();
 
@@ -222,7 +224,7 @@ class StaffController extends Controller
                 return redirect()->back()->with('success', 'Staff member updated successfully.');
             } else {
                 return redirect()->back()
-                    ->with('error', 'Failed updating staff member');
+                    ->with('error', 'Failed updating staff member,  change something on the fields to update!');
             }
         } else {
             return redirect()->back()

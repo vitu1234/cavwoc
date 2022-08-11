@@ -51,6 +51,7 @@ class DonationsController extends Controller
             'budgeted_amount' => 'string|required',
             'amount_raised' => 'string|required',
             'project_context' => 'string|required',
+            'img_url' => 'image|nullable|max:3000',
         ]);
 
         //Handle file upload
@@ -152,13 +153,14 @@ class DonationsController extends Controller
             'budgeted_amount' => 'string|required',
             'amount_raised' => 'string|required',
             'project_context' => 'string|required',
+            'img_url' => 'image|nullable|max:3000',
         ]);
 
 
         $checkProject = DB::connection('mysql')->select('SELECT * FROM donations WHERE id =:id', ['id' => $id]);
         if (!empty($checkProject)) {
             //Handle file upload
-            if ($request->hasFile('img_url')) {
+            if ($request->file('img_url') !=null) {
                 // get filename with extension
                 $fileNameWithExt = $request->file('img_url')->getClientOriginalName();
 
@@ -210,7 +212,7 @@ class DonationsController extends Controller
                 return redirect()->back()->with('success', 'Project updated successfully.');
             } else {
                 return redirect()->back()
-                    ->with('error', 'Failed updating project');
+                    ->with('error', 'Failed updating project, change something on the fields to update!');
             }
         } else {
             return redirect()->back()

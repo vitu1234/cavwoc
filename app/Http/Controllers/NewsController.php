@@ -48,7 +48,9 @@ class NewsController extends Controller
     {
         $request->validate([
             'title' => 'string|required|max:255',
-            'body' => 'string|required'
+            'body' => 'string|required',
+            'img_url' => 'image|nullable|max:3000',
+            'attachment_url' => 'file|nullable|max:3000',
         ]);
 
         //Handle file upload
@@ -160,14 +162,16 @@ class NewsController extends Controller
     {
         $request->validate([
             'title' => 'string|required|max:255',
-            'body' => 'string|required'
+            'body' => 'string|required',
+            'img_url' => 'image|nullable|max:3000',
+            'attachment_url' => 'file|nullable|max:3000',
         ]);
 
 
         $checkNews = DB::connection('mysql')->select('SELECT * FROM news WHERE id =:id', ['id' => $id]);
         if (!empty($checkNews)) {
             //Handle file upload
-            if ($request->hasFile('img_url')) {
+            if ($request->file('img_url') != null) {
                 // get filename with extension
                 $fileNameWithExt = $request->file('img_url')->getClientOriginalName();
 
@@ -193,7 +197,7 @@ class NewsController extends Controller
             }
 
             //Handle file upload
-            if ($request->hasFile('attachment_url')) {
+            if ($request->file('attachment_url') != null) {
                 // get filename with extension
                 $fileNameWithExt = $request->file('attachment_url')->getClientOriginalName();
 
@@ -240,7 +244,7 @@ class NewsController extends Controller
                 return redirect()->back()->with('success', 'News article updated successfully.');
             } else {
                 return redirect()->back()
-                    ->with('error', 'Failed updating news article');
+                    ->with('error', 'Failed updating news article, change something on the fields to update!');
             }
         } else {
             return redirect()->back()
