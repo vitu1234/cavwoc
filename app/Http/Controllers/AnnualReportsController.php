@@ -195,7 +195,7 @@ class AnnualReportsController extends Controller
                 return redirect()->back()->with('success', 'Annual report updated successfully.');
             } else {
                 return redirect()->back()
-                    ->with('error', 'Failed updating annual report');
+                    ->with('error', 'Failed updating annual report, change something on the fields to update!');
             }
         } else {
             return redirect()->back()

@@ -10,13 +10,13 @@
                 <!-- Logo icon -->
                 <b class="logo-icon">
                     <!-- Dark Logo icon -->
-                    <img src="{{asset('admin_assets/plugins/images/logo-icon.png')}}" alt="homepage"/>
+{{--                    <img src="{{asset('admin_assets/plugins/images/admin.png')}}" alt="homepage"/>--}}
                 </b>
                 <!--End Logo icon -->
                 <!-- Logo text -->
                 <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="{{asset('admin_assets/plugins/images/logo-text.png')}}" alt="homepage"/>
+                            <img src="{{asset('admin_assets/plugins/images/admin.png')}}" alt="homepage"/>
                         </span>
             </a>
             <!-- ============================================================== -->
