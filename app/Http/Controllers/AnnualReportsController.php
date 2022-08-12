@@ -46,10 +46,11 @@ class AnnualReportsController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
             'title' => 'string|required',
             'description' => 'string|nullable',
-            'report_url' => 'file|required'
+            'report_url' => 'file|required|max:10000'
         ]);
 
         //Handle file upload
@@ -139,14 +140,14 @@ class AnnualReportsController extends Controller
         $request->validate([
             'title' => 'string|required',
             'description' => 'string|nullable',
-            'report_url' => 'file|nullable'
+            'report_url' => 'file|nullable|max:3000'
         ]);
-
 
         $checkGallery = DB::connection('mysql')->select('SELECT * FROM annual_reports WHERE id =:id', ['id' => $id]);
         if (!empty($checkGallery)) {
             //Handle file upload
-            if ($request->hasFile('report_url')) {
+            if ($request->file('report_url') != null) {
+
                 // get filename with extension
                 $fileNameWithExt = $request->file('report_url')->getClientOriginalName();
 
@@ -171,6 +172,11 @@ class AnnualReportsController extends Controller
                 $fileNamToStore = $checkGallery[0]->report_url;
             }
 
+//            echo '<pre>';
+//            print_r($fileNamToStore);
+//            echo '</pre>';
+//            die();
+
             $saveData = DB::connection('mysql')->update(
                 '
             UPDATE annual_reports 
@@ -187,11 +193,12 @@ class AnnualReportsController extends Controller
                     'id' => $id
                 ]
             );
+
             if ($saveData) {
                 return redirect()->back()->with('success', 'Annual report updated successfully.');
             } else {
                 return redirect()->back()
-                    ->with('error', 'Failed updating annual report');
+                    ->with('error', 'Failed updating annual report, change something on the fields to update!');
             }
         } else {
             return redirect()->back()

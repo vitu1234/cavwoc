@@ -44,11 +44,11 @@ class PartnersController extends Controller
     {
         $request->validate([
             'link' => 'string|required|max:255',
-            'img_url' => 'file|required'
+            'img_url' => 'image|required|max:3000'
         ]);
 
         //Handle file upload
-        if ($request->hasFile('img_url')) {
+        if ($request->file('img_url') != null) {
             // get filename with extension
             $fileNameWithExt = $request->file('img_url')->getClientOriginalName();
 
@@ -130,14 +130,14 @@ class PartnersController extends Controller
     {
         $request->validate([
             'link' => 'string|required|max:255',
-            'img_url' => 'file|required'
+            'img_url' => 'image|nullable|max:3000'
         ]);
 
 
         $checkPartner = DB::connection('mysql')->select('SELECT * FROM partners WHERE id =:id', ['id' => $id]);
         if (!empty($checkPartner)) {
             //Handle file upload
-            if ($request->hasFile('img_url')) {
+            if ($request->file('img_url') != null) {
                 // get filename with extension
                 $fileNameWithExt = $request->file('img_url')->getClientOriginalName();
 
@@ -182,7 +182,7 @@ class PartnersController extends Controller
                 return redirect()->back()->with('success', 'Partner updated successfully.');
             } else {
                 return redirect()->back()
-                    ->with('error', 'Failed updating partner');
+                    ->with('error', 'Failed updating partner,  change something on the fields to update!');
             }
         } else {
             return redirect()->back()

@@ -48,9 +48,8 @@ class GalleryController extends Controller
     {
         $request->validate([
             'title' => 'string|required',
-            'img_url' => 'file|required'
+            'img_url' => 'image|required|max:3000'
         ]);
-
         //Handle file upload
         if ($request->hasFile('img_url')) {
             // get filename with extension
@@ -134,14 +133,14 @@ class GalleryController extends Controller
     {
         $request->validate([
             'title' => 'string|required',
-            'img_url' => 'file|required'
+            'img_url' => 'image|required|max:3000'
         ]);
 
 
         $checkGallery = DB::connection('mysql')->select('SELECT * FROM gallery WHERE id =:id', ['id' => $id]);
         if (!empty($checkGallery)) {
             //Handle file upload
-            if ($request->hasFile('img_url')) {
+            if ($request->file('img_url') != null) {
                 // get filename with extension
                 $fileNameWithExt = $request->file('img_url')->getClientOriginalName();
 
@@ -184,7 +183,7 @@ class GalleryController extends Controller
                 return redirect()->back()->with('success', 'Gallery image updated successfully.');
             } else {
                 return redirect()->back()
-                    ->with('error', 'Failed updating gallery image');
+                    ->with('error', 'Failed updating gallery image, change something on the fields to update!');
             }
         } else {
             return redirect()->back()

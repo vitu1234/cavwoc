@@ -54,6 +54,8 @@ class ProjectsController extends Controller
             'amount_raised' => 'string|required',
             'project_context' => 'string|required',
             'project_donor' => 'string|nullable',
+            'img_url' => 'image|nullable|max:3000',
+            'project_file' => 'file|nullable|max:10000',
         ]);
 
         //Handle file upload
@@ -190,13 +192,15 @@ class ProjectsController extends Controller
             'amount_raised' => 'string|required',
             'project_context' => 'string|required',
             'project_donor' => 'string|nullable',
+            'img_url' => 'image|nullable|max:3000',
+            'project_file' => 'file|nullable|max:10000',
         ]);
 
 
         $checkProject = DB::connection('mysql')->select('SELECT * FROM projects WHERE id =:id', ['id' => $id]);
         if (!empty($checkProject)) {
             //Handle file upload
-            if ($request->hasFile('img_url')) {
+            if ($request->file('img_url') != null) {
                 // get filename with extension
                 $fileNameWithExt = $request->file('img_url')->getClientOriginalName();
 
@@ -222,7 +226,7 @@ class ProjectsController extends Controller
             }
 
             //Handle file upload
-            if ($request->hasFile('project_file')) {
+            if ($request->file('project_file') != null) {
                 // get filename with extension
                 $fileNameWithExt = $request->file('project_file')->getClientOriginalName();
 
@@ -282,7 +286,7 @@ class ProjectsController extends Controller
                 return redirect()->back()->with('success', 'Project updated successfully.');
             } else {
                 return redirect()->back()
-                    ->with('error', 'Failed updating project');
+                    ->with('error', 'Failed updating project,  change something on the fields to update!');
             }
         } else {
             return redirect()->back()
@@ -305,7 +309,7 @@ class ProjectsController extends Controller
 
 
             $delete = DB::connection('mysql')->select('DELETE FROM projects WHERE id=:id', ['id' => $id]);
-            if ($delete){
+            if ($delete) {
                 if ($checkProject[0]->project_file != 'noimage.jpg') {
                     //delete image
                     Storage::delete('public/projects/' . $checkProject[0]->project_file);
@@ -323,7 +327,7 @@ class ProjectsController extends Controller
 
                 );
                 return redirect()->route('all_projects')->with($data);
-            }else{
+            } else {
                 $projects = DB::connection('mysql')->select('SELECT *FROM projects ORDER BY id DESC ');
 
                 $data = array(

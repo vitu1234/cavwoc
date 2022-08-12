@@ -77,7 +77,7 @@
                                                                                     target="_blank"
                                                                                     href="{{url('storage/annual_reports/' . $report->report_url)}}">View
                                                     File</a></label>
-                                            <input accept="application/pdf" name="attachment_url" type="file"
+                                            <input accept="application/pdf" name="report_url" type="file"
                                                    placeholder=""
                                                    class="form-control p-0 border-0">
                                         </div>
