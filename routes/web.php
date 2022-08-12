@@ -12,7 +12,18 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::prefix('admin')->group(function () {
+require __DIR__ . '/auth.php';
+
+
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/', ['App\Http\Controllers\AdminDashboardController', 'setDashboard']);
 
     Route::prefix('users')->group(function () {
@@ -130,6 +141,11 @@ Route::prefix('admin')->group(function () {
         Route::get('/edit/{id}', ['App\Http\Controllers\VacanciesController', 'edit']);
         Route::put('/update/{id}', ['App\Http\Controllers\VacanciesController', 'update']);
         Route::delete('/delete/{id}', ['App\Http\Controllers\VacanciesController', 'destroy']);
+    });
+
+    Route::prefix('profile')->group(function () {
+        Route::get('{id}', ['App\Http\Controllers\UsersController', 'view_user_profile']);
+        Route::put('{id}', ['App\Http\Controllers\UsersController', 'update']);
     });
 
 

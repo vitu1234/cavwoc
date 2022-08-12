@@ -102,8 +102,16 @@
                     </a>
                 </li>
 
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/profile/{{\Illuminate\Support\Facades\Auth::user()->id}}"
+                       aria-expanded="false">
+                        <i class="fa fa-user-circle" aria-hidden="true"></i>
+                        <span class="hide-menu">My Profile</span>
+                    </a>
+                </li>
+
                 <li class="text-center  ">
-                    <a href="/admin/logout"
+                    <a href="/logout"
                        class="btn d-grid btn-danger text-white">
                         <i class="fa fa-power-off" aria-hidden="true"></i>Logout</a>
                 </li>

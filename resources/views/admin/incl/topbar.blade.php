@@ -46,9 +46,9 @@
                 <!-- User profile and search -->
                 <!-- ============================================================== -->
                 <li>
-                    <a class="profile-pic" href="#">
-                        <img src="{{asset('admin_assets/plugins/images/users/d5.jpg')}}" alt="user-img" width="36"
-                             class="img-circle"><span class="text-white font-medium">Admin</span></a>
+                    <a class="profile-pic" href="/admin/profile/{{\Illuminate\Support\Facades\Auth::user()->id}}">
+                        <img src="{{asset('images/blank_pic.png')}}" alt="user-img" width="36"
+                             class="img-circle"><span class="text-white font-medium">{{\Illuminate\Support\Facades\Auth::user()->first_name}}</span></a>
                 </li>
                 <!-- ============================================================== -->
                 <!-- User profile and search -->

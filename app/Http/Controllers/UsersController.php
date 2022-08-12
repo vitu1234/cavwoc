@@ -87,6 +87,17 @@ class UsersController extends Controller
         return view('admin.users.view')->with($data);
     }
 
+    public function view_user_profile($id)
+    {
+        $user = DB::connection('mysql')->select('SELECT *FROM users WHERE id =:id ', ['id' => $id]);
+
+        $data = array(
+            'user' => !empty($user) ? $user[0] : $user,
+        );
+        return view('admin.profile.index')->with($data);
+    }
+
+
     public function update(Request $request, $id)
     {
         $request->validate([
