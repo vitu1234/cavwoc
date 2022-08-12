@@ -16,6 +16,13 @@ License URI: https://www.linkedin.com/in/vitu-mafeni-074940173/-->
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <meta name="description"
+          content="CAVWOC: Centre for Alternatives for Victimized Women and Children.
+          We are a social service organization formed in 1997 and registered under the Trustees Incorporation Act of Malawi in 1998. We are affiliated to Council for Non-Governmental Organizations in Malawi (CONGOMA), NGO Board of Malawi, NGOGCN and the Human Rights Consultative Committee. CAVWOC was established with the sole purpose of providing technical and psychosocial support to women and children that are survivors of gender based violence and sexual reproductive health rights violations. As a local NGO, we support the rights of women and children in Malawi. We work to empower abused, vulnerable and marginalized women and children in order to provide them with knowledge, counsel and assistance in regards to their rights that will transform them from the state of being victimized and vulnerable into socially and economically empowered members of society. "
+    />
+    <meta name="keywords" content="CAVWOC, Centre, Alternatives, Victimized, Women, Malawi, Children, Trustees, Incorporation, Act, 1998, Non-Governmental, Organizations, CAVWOC, CONGOMA, NGOGCN, society"/>
+    <meta name="author" content="Vitumbiko Mafeni"/>
+
     <title>{{ config('app.name', 'CAVWOC') }}</title>
 
     <!-- Fonts -->
